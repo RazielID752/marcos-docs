@@ -1,0 +1,42 @@
+# Docker
+
+![O que é Docker](/assets/img/o-que-e-docker.png)
+
+O **Docker** é uma plataforma de código aberto usada para criar, implantar e executar aplicativos em contêineres. Ele simplifica o desenvolvimento e a implantação de aplicativos ao isolar e padronizar os ambientes, facilitando a criação, distribuição e execução de aplicativos em diversos sistemas operacionais e infraestruturas. A seguir, apresentamos um resumo básico dos principais conceitos e funcionalidades do Docker:
+
+### Como o Dcoker funciona?
+![Como funciona o Docker](/assets/img/docker-funcionando.png)
+
+A tecnologia Docker usa o kernel do Linux e funcionalidades do kernel, como cGroups e namespaces, para segregar processos. Assim, eles podem ser executados de maneira independente. O objetivo dos containers é criar independência: a habilidade de executar diversos processos e apps separadamente para utilizar melhor a infraestrutura e, ao mesmo tempo, manter a segurança que você teria em sistemas separados.
+
+As ferramentas de container, incluindo o Docker, incluem um modelo de implantação com base em imagem. Isso facilita o compartilhamento de uma aplicação ou conjunto de serviços, incluindo todas as dependências deles em vários ambientes. O Docker também automatiza a implantação da aplicação (ou de conjuntos de processos que constituem uma app) dentro desse ambiente de containers.
+
+Essas ferramentas baseadas nos containers Linux fazem com que o Docker seja exclusivo e fácil de usar. Elas também oferecem aos usuários acesso sem precedentes a apps e total controle sobre as versões e distribuição, além da habilidade de implantar com rapidez.
+
+### Principais Conceitos do Docker:
+
+- **Contêineres:** Permitem empacotar aplicativos com suas dependências, incluindo bibliotecas e configurações, para garantir que funcionem de maneira consistente em diferentes ambientes.
+- **Imagens:** São modelos de aplicativos que incluem todo o necessário para executar um contêiner. Podem ser criadas e compartilhadas por meio do [Docker Hub](https://hub.docker.com/).
+- **Dockerfile:** É um arquivo de configuração usado para criar automaticamente imagens Docker, definindo os passos para configurar um ambiente de execução.
+- **Docker Compose:** Ferramenta para definir e executar aplicativos multi contêineres, permitindo a configuração de vários serviços em um único arquivo.
+- **Orquestração de Contêineres:** O **Docker Swarm** e o **Kubernetes** são ferramentas usadas para gerenciar, escalar e manter contêineres em um ambiente de produção.
+
+
+### Principais Comandos do Docker:
+- **docker --version:** Exibe a versão do Docker instalada.
+- **`docker pull [imagem]`** Baixa uma imagem do Docker Hub para o seu sistema local.
+- **`docker build -t [nome-da-imagem] [caminho-do-dockerfile]`** Cria uma nova imagem Docker a partir de um `Dockerfile`.
+- **`docker [images]`** Lista todas as imagens armazenadas localmente.
+- **`docker rmi [imagem]`** Remove uma imagem Docker do seu sistema local.
+- **`docker ps`** Lista os contêineres em execução.
+- **`docker ps -a`** Lista todos os contêineres, incluindo os que não estão em execução.
+- **`docker run [opções] [imagem]`** Cria e inicia um contêiner a partir de uma imagem Docker.
+- **`docker exec -it [nome-do-contêiner] [comando]`:** Executa um comando dentro de um contêiner em execução.
+- **`docker stop [nome-do-contêiner]`** Para a execução de um contêiner.
+- **`docker start [nome-do-contêiner]`** Inicia um contêiner parado.
+- **`docker rm [nome-do-contêiner]`** Remove um contêiner parado.
+- **`docker logs [nome-do-contêiner]`** Exibe os logs de um contêiner.
+- **`docker-compose up`** Inicia os serviços definidos em um arquivo `docker-compose.yml`.
+- **`docker-compose down`** Para e remove todos os contêineres definidos em um arquivo `docker-compose.yml`.
+
+> **Referência:** [redhat](https://www.redhat.com/pt-br/topics/containers/what-is-docker)

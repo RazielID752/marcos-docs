@@ -1,0 +1,117 @@
+---
+title: O quê e lógica de programação?
+description: A lógica de programação é a base fundamental para o desenvolvimento de programas de computador.
+---
+
+![Logica de progamacao](/assets/img/logica-de-progamacao.png)
+
+Ela consiste na criação de algoritmos, que são sequências lógicas, estruturadas e ordenadas de instruções que um computador pode seguir para resolver problemas específicos ou executar tarefas.
+
+A lógica de programação vai além de simplesmente escrever códigos. Ela é essencialmente sobre a estruturação do pensamento para resolver problemas de forma sistemática, eficiente e inteligente. Para isso, é necessário compreender e aplicar conceitos como:
+
+1. **Divisão de problemas complexos**
+- Dividir um problema grande em partes menores e mais gerenciáveis, tornando-o mais fácil de entender e resolver.
+2. **Identificação de padrões**
+- Reconhecer repetições ou semelhanças em problemas para criar soluções reutilizáveis.
+3. **Uso de estruturas de controle**
+- Aplicar ferramentas como loops (repetições), condicionais (decisões baseadas em situações específicas) e funções, que permitem construir fluxos lógicos e dinâmicos no programa.
+4. **Desenvolvimento de sequências lógicas**
+- Criar uma série de passos bem organizados, que garantam que cada ação seja executada de maneira eficiente e sem erros.
+
+### Por que a Lógica de Programação é Importante?
+Dominar a lógica de programação é uma habilidade crucial para qualquer pessoa que deseja se tornar um desenvolvedor de software ou trabalhar com tecnologia. Independentemente da linguagem de programação utilizada, os conceitos de lógica permanecem os mesmos. Eles formam a base para a construção de algoritmos claros, precisos e eficientes, capazes de resolver problemas variados com rapidez e eficácia.
+
+Além disso, a lógica de programação desempenha um papel essencial em áreas como:
+
+- Automatização de processos, permitindo que tarefas repetitivas sejam executadas de forma automática e sem erros.
+- Desenvolvimento de soluções inovadoras, através da aplicação criativa de algoritmos para resolver problemas do dia a dia.
+- Melhoria no raciocínio lógico e analítico, habilidades que podem ser aplicadas não apenas na programação, mas em diversas áreas da vida e do trabalho.
+
+#### Exemplo de lógica
+
+Esse aqui é um exemplo clássico de lógica de programação em JavaScript: O objetivo é determinar se uma palavra é um palíndromo (ou seja, uma palavra que pode ser lida da mesma forma de trás para frente).
+
+```js
+// Função para verificar se uma palavra é um palíndromo
+function verificarPalindromo(palavra) {
+  // Converte a palavra para letras minúsculas
+  const palavraMinuscula = palavra.toLowerCase();
+
+  // Inverte a palavra
+  const palavraInvertida = palavraMinuscula.split('').reverse().join('');
+
+  // Verifica se a palavra original é igual à palavra invertida
+  if (palavraMinuscula === palavraInvertida) {
+    return true; // É um palíndromo
+  } else {
+    return false; // Não é um palíndromo
+  }
+}
+
+// Testes
+const palavra1 = "radar";
+const palavra2 = "programação";
+
+// Saída: radar é um palíndromo? true
+console.log(`${palavra1} é um palíndromo?`, verificarPalindromo(palavra1)); 
+
+// Saída: programação é um palíndromo? false
+console.log(`${palavra2} é um palíndromo?`, verificarPalindromo(palavra2)); 
+
+```
+#### Explicação da Lógica:
+1. Entrada de Dados:
+- O algoritmo recebe uma palavra, como "radar" ou "programação".
+2. Processamento:
+- A palavra é convertida para minúsculas para evitar diferenças entre letras maiúsculas e minúsculas.
+- A função divide a palavra em caracteres usando split(''), inverte os caracteres com reverse() e junta novamente com join('').
+- Compara a palavra original com sua versão invertida.
+3. Saída de Dados:
+- Retorna true se a palavra for igual à sua versão invertida (palíndromo) ou false caso contrário.
+
+Aprender lógica de programação é o primeiro passo para ingressar no mundo do desenvolvimento, pois ajuda a entender como um computador "pensa" e como ele pode ser instruído para realizar tarefas complexas. Mais do que um pré-requisito técnico, ela é uma habilidade que desenvolve a capacidade de raciocínio e resolução de problemas, tanto no universo digital quanto fora dele.
+
+## O quê e algoritmo?
+
+![Algoritimo](/assets/img/Algoritimo.jpg)
+
+Algoritmos são sequências de passos que seguimos com a intenção de atingir um objetivo, pode ser desde atravessar uma rua, fazer um bolo ou definir qual critério usar para aprovar ou reprovar um aluno, por exemplo.
+
+No desenvolvimento de um algoritmo, devemos definir com clareza e forma precisa o conjunto de regras ou instruções que serão utilizadas para resolver aquele problema em específico.
+
+Portanto, antes de programar, precisamos saber o que deve ser feito e planejar o passo a passo, ou seja, criar o algoritmo e avaliar se o resultado obtido é a solução esperada. Entendido isso, então definimos uma linguagem de programação para implementar nossos algoritmos.
+
+#### Exemplo de algoritmo
+
+Vamos para um exemplo simples de um algoritmo em JavaScript que calcula a soma de todos os números de um array:
+
+```js
+// Função que calcula a soma dos números de um array
+function somarNumeros(array) {
+  let soma = 0; // Inicializa a variável soma com zero
+  
+  // Percorre cada número do array
+  for (let i = 0; i < array.length; i++) {
+    soma += array[i]; // Adiciona o valor do elemento à soma
+  }
+  
+  return soma; // Retorna o resultado final
+}
+
+// Teste do algoritmo
+const numeros = [1, 2, 3, 4, 5]; // Array de números
+const resultado = somarNumeros(numeros);
+
+console.log("A soma dos números é:", resultado); // Saída: A soma dos números é: 15
+```
+#### Explicação:
+1. Entrada de dados: O algoritmo recebe um array de números (`[1, 2, 3, 4, 5]`).
+2. Processamento: Usa um loop `for` para percorrer cada elemento do array e somar seus valores.
+3. Saída de dados: Retorna e imprime a soma total.
+
+### Um dois maiores programador diz o seguinte em seu livro:
+
+>"Algoritmos são conjuntos de passos finitos e organizados que, quando executados resolvem um determinado problema."
+(Augusto Manzano - Livro: Algoritmos - Lógica para desenvolvimento de programação de computadores)
+
+

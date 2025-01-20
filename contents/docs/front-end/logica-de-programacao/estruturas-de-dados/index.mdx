@@ -1,0 +1,98 @@
+---
+title: Estruturas de dados
+---
+
+Estruturas de dados são formas de organizar e armazenar dados de modo a permitir o acesso eficiente, a manipulação e o gerenciamento desses dados em programas de computador. Elas fornecem meios para estruturar e organizar informações para facilitar operações como busca, inserção, exclusão e atualização dos dados.
+
+Estruturas de dados são formas organizadas de armazenar e gerenciar informações em programas de computador. Elas permitem que dados sejam acessados, manipulados e gerenciados de maneira eficiente, desempenhando um papel fundamental no desenvolvimento de software.
+
+A escolha de uma estrutura de dados adequada para um problema pode influenciar diretamente no desempenho de um programa, tanto em termos de tempo de execução quanto de uso de memória. Cada estrutura de dados é projetada para resolver problemas específicos, e conhecê-las é essencial para um desenvolvedor.
+
+Essas estruturas são fundamentais na programação, pois cada uma tem suas características e é mais adequada para determinados tipos de problemas. Existem várias estruturas de dados, como listas, pilhas, filas, árvores, grafos, entre outras, cada uma com suas próprias regras de organização e métodos de acesso aos dados.
+
+Por exemplo:
+
+Listas: Estrutura que permite armazenar uma coleção de elementos onde cada elemento tem uma posição relativa aos demais.
+Pilhas: Segue o conceito de LIFO (Last In, First Out), onde o último elemento inserido é o primeiro a ser retirado.
+Filas: Segue o conceito de FIFO (First In, First Out), onde o primeiro elemento inserido é o primeiro a ser retirado.
+….
+
+1. Listas
+Uma lista é uma coleção ordenada de elementos, onde cada elemento tem uma posição específica. As listas podem ser:
+
+- Estáticas: Têm tamanho fixo, definido no momento da criação. Exemplo: arrays em linguagens como C ou Java.
+- Dinâmicas: Podem crescer ou diminuir de tamanho durante a execução do programa. Exemplo: listas em Python.
+
+Exemplo de uma lista em Python:
+
+```python
+# Criando uma lista
+frutas = ["maçã", "banana", "cereja"]
+
+# Adicionando elementos
+frutas.append("laranja")
+
+# Acessando elementos
+print(frutas[0])  # Saída: maçã
+
+# Removendo elementos
+frutas.remove("banana")
+print(frutas)  # Saída: ['maçã', 'cereja', 'laranja']
+```
+
+2. Pilhas seguem o princípio LIFO (Last In, First Out), ou seja, o último elemento inserido é o primeiro a ser retirado. Isso é útil em problemas que envolvem processamento reverso, como desfazer ações em editores de texto.
+
+Exemplo de uma pilha em Python:
+
+```python
+# Implementando uma pilha
+pilha = []
+
+# Adicionando elementos à pilha
+pilha.append(10)
+pilha.append(20)
+pilha.append(30)
+
+# Removendo elementos (último a entrar é o primeiro a sair)
+print(pilha.pop())  # Saída: 30
+print(pilha)        # Saída: [10, 20]
+```
+3. Filas (Queues)
+Filas seguem o princípio FIFO (First In, First Out), ou seja, o primeiro elemento inserido é o primeiro a ser removido. Elas são usadas em sistemas de fila de espera, como em impressoras ou serviços em tempo real.
+
+Exemplo de uma fila em Python:
+
+```python
+from collections import deque
+
+# Criando uma fila
+fila = deque()
+
+# Adicionando elementos
+fila.append("cliente1")
+fila.append("cliente2")
+fila.append("cliente3")
+
+# Removendo o primeiro elemento
+print(fila.popleft())  # Saída: cliente1
+print(fila)            # Saída: deque(['cliente2', 'cliente3'])
+```
+
+4. Conjuntos (Sets)
+Conjuntos são coleções desordenadas que não permitem elementos duplicados. Eles são úteis para verificar a existência de itens rapidamente ou realizar operações matemáticas como união e interseção.
+
+Exemplo de um conjunto em Python:
+
+```python
+# Criando um conjunto
+numeros = {1, 2, 3, 4}
+
+# Adicionando elementos
+numeros.add(5)
+
+# Removendo elementos
+numeros.remove(3)
+
+# Verificando interseção de conjuntos
+outro_conjunto =
+```

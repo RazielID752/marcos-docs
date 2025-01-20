@@ -1,0 +1,73 @@
+---
+title: Funções, procedimentos, métodos, teste de mesa
+description: Funções, procedimentos e métodos são termos frequentemente usados na programação para descrever blocos de código que executam uma tarefa específica. 
+---
+
+Embora possam ter algumas diferenças dependendo da linguagem de programação, em geral, eles têm propósitos semelhantes.
+
+Funções: São blocos de código que realizam uma tarefa específica e podem retornar um valor. Em muitas linguagens de programação, as funções são definidas com um nome, parâmetros de entrada (se necessário) e um tipo de retorno. Elas são úteis para dividir o código em partes menores e reutilizáveis. Por exemplo, uma função que calcula a média de uma lista de números ou uma função que converte temperatura de Celsius para Fahrenheit.
+
+Procedimentos: São blocos de código semelhantes às funções, mas não retornam valores. Eles realizam uma sequência de operações ou tarefas específicas, mas não têm um valor de retorno. Em algumas linguagens, como Pascal, são chamados de "procedimentos". São úteis quando se deseja executar um conjunto de operações sem precisar retornar um valor.
+
+Métodos: São funções ou procedimentos que estão associados a um objeto ou a uma classe em linguagens orientadas a objetos. Eles representam o comportamento de um objeto específico ou de uma classe e são invocados em relação a uma instância da classe. Por exemplo, em Java ou javascript, um método pode ser uma função definida dentro de uma classe que manipula os atributos desse objeto.
+
+## Teste de mesa
+
+O teste de mesa é uma técnica usada para verificar a lógica ou o funcionamento de um algoritmo ou código. Em vez de depender exclusivamente da execução do código em um computador, o teste de mesa é feito manualmente, seguindo as instruções do algoritmo passo a passo para acompanhar como os valores das variáveis mudam ao longo do processo.
+
+Geralmente, para realizar um teste de mesa, siga estes passos:
+
+Entenda o algoritmo ou código: Leia e compreenda completamente o algoritmo ou trecho de código que será testado.
+
+Acompanhe as variáveis: Para cada variável utilizada no código, crie uma tabela ou lista. Acompanhe o valor inicial de cada variável e atualize seus valores conforme o código é executado passo a passo.
+
+Execute manualmente o código: Siga as instruções do algoritmo ou código, anotando e atualizando os valores das variáveis a cada passo.
+
+Verifique os resultados: Depois de completar todas as etapas do algoritmo, verifique se os valores finais das variáveis correspondem ao resultado esperado.
+
+Essa técnica é valiosa para identificar erros lógicos, lógica incorreta ou inconsistências no algoritmo antes mesmo de executá-lo em um computador. É especialmente útil em situações onde o código pode ser complexo ou quando há uma suspeita de que algo não está funcionando corretamente.
+
+
+# Tabela de Cálculos
+
+| #   | num | soma           | qtde     | resp |
+|-----|-----|----------------|----------|------|
+| 0   | -   | 0              | 0        | s    |
+| 1   | 14  | 14 + 0 = 14    | 0 + 1 = 1| s    |
+| 2   | 6   | 14 + 6 = 20    | 1 + 1 = 2| s    |
+| 3   | 8   | 20 + 8 = 28    | 2 + 1 = 3| s    |
+| 4   | 10  | 28 + 10 = 38   | 3 + 1 = 4| s    |
+| 5   | 5   | 38 + 5 = 43    | 4 + 1 = 5| s    |
+| 6   | 23  | 43 + 23 = 66   | 5 + 1 = 6| n    |
+
+
+# Exercício 1 abaixo:
+
+![Teste de mesa](/assets/img/teste-de-mesa.png)
+
+Digite na tabela o que o programa está fazendo
+
+```c
+algoritmo media
+inicio
+    real media, soma
+    inteiro num, qtde
+    literal resp
+    soma = 0
+    qtde = 0
+    resp = 's'
+    enquanto (resp == 's' ou resp == 'S') {
+        escreva("Digite um número")
+        leia(num)
+        soma = soma + num
+        qtde = qtde + 1
+        escreva("Deseja continuar?")
+        leia(resp)
+    }
+    media = soma / qtde
+    escreva("A média dos números digitados é: " + media)
+fim
+s
+```
+
+[Link para teste tabela](https://docs.google.com/spreadsheets/d/1gyEHfl9X5Ccih4r_FAsmfDadW8g5HQcyG5uYLMIeUIE/edit?usp=sharing)

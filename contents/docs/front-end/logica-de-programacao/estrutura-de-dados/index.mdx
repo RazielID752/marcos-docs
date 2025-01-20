@@ -1,0 +1,41 @@
+---
+title: Estruturas de dados heterogêneas (registros)
+---
+O que é Estruturas de dados heterogêneas?
+
+Um uso bastante frequente na Linguagem C é a elaboração de estruturas de dados heterogêneas, mas vulgarmente conhecidas em outras linguagens de programação como registros.
+
+Estruturas de dados heterogêneas, ou registros, são um tipo de estrutura de dados em programação que permitem armazenar diferentes tipos de dados relacionados sob um único nome. Elas são usadas para representar um conjunto de informações relacionadas que não são necessariamente do mesmo tipo.
+
+Em linguagens de programação como C, C++, Python (usando dicionários) e outras, os registros são chamados de "structs" ou "estruturas". Eles permitem definir um novo tipo de dados, combinando diferentes variáveis com tipos distintos em um único bloco de dados. Cada variável dentro do registro é chamada de campo ou membro.
+
+Por exemplo, em C, você pode criar um registro para representar informações sobre uma pessoa, combinando nome (string), idade (int) e altura (float) em uma única estrutura:
+
+
+```c
+struct Pessoa pessoa1;
+
+strcpy(pessoa1.nome, "João");
+pessoa1.idade = 30;
+pessoa1.altura = 1.75;
+```
+
+Os registros são úteis para organizar e manipular conjuntos de dados relacionados de maneira mais coesa e estruturada, facilitando o armazenamento e acesso a informações heterogêneas.
+
+```c
+struct Pessoa {
+    char nome[50];
+    int idade;
+    float altura;
+};
+```
+
+### Para que serve esse tipo de estrutura?
+
+Elas são úteis em situações em que você precisa agrupar diversas informações de tipos distintos em uma única unidade lógica. Por exemplo, se você estiver desenvolvendo um sistema de gestão de funcionários, pode criar uma estrutura de registro que contenha o nome, o número de identificação, o cargo e a data de admissão de um funcionário.
+
+Isso facilita o armazenamento e manipulação desses dados relacionados como uma entidade única. Sem uma estrutura de registro, seria necessário usar várias variáveis separadas para armazenar cada informação, o que pode ser menos organizado e mais propenso a erros.
+
+Além disso, as estruturas de registros são essenciais na programação para representar entidades complexas de maneira mais estruturada e coerente, melhorando a organização do código e a legibilidade do programa.
+
+>**Referência: [UNB](https://sae.unb.br/cae/conteudo/unbfga/apc/new_estruturaheterogenea.html)**

@@ -1,0 +1,43 @@
+---
+title: Estruturas de Dados Homogêneas (Vetores e Matrizes)
+---
+
+![Estruturas de dados homogêneas](/assets/img/homogenea.gif)
+
+## O que são Estruturas de Dados Homogêneas?
+
+As **estruturas de dados homogêneas** são coleções que armazenam elementos do mesmo tipo de dados de forma contígua na memória. Isso significa que todos os elementos ocupam posições consecutivas na memória e possuem o mesmo tamanho. Essas estruturas são amplamente utilizadas em programação para organizar, manipular e acessar dados de maneira eficiente.
+
+### Exemplos mais comuns:
+
+1. **Vetores (ou Arrays)**:
+   - Um vetor é uma estrutura linear, onde os elementos são armazenados em uma única dimensão.
+   - Cada elemento é identificado por um índice único, que geralmente começa em 0.
+   - É ideal para armazenar listas de dados simples, como notas de alunos, temperaturas diárias, entre outros.
+
+2. **Matrizes (ou Arrays Multidimensionais)**:
+   - Matrizes são extensões dos vetores para várias dimensões, como tabelas (2D) ou até cubos (3D).
+   - São muito usadas em aplicações que requerem organização tabular, como planilhas ou representações de imagens.
+
+---
+
+## Vetores
+
+### Declaração e Inicialização
+A seguir está um exemplo de como declarar e inicializar um vetor em C:
+
+```c
+#include <stdio.h>
+
+int main() {
+    // Declarando e inicializando um vetor de inteiros
+    int numeros[5] = {10, 20, 30, 40, 50};
+
+    // Iterando sobre o vetor e imprimindo seus elementos
+    for (int i = 0; i < 5; i++) {
+        printf("Elemento %d: %d\n", i, numeros[i]);
+    }
+
+    return 0;
+}
+```

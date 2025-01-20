@@ -1,0 +1,74 @@
+---
+title: O que é álgebra Booleana?
+description: A álgebra Booleana é um ramo da matemática e da lógica que lida com valores lógicos verdadeiro e falso, representados como 1 e 0, respectivamente. É essencial para a lógica computacional e o design de circuitos digitais.
+---
+
+A **álgebra Booleana** é um ramo da matemática e da lógica que lida com **valores lógicos** — *verdadeiro* e *falso* — representados pelos números **1** e **0**, respectivamente. Desenvolvida por **George Boole** no século XIX, ela é a base para muitos aspectos da computação moderna, sendo fundamental na teoria dos circuitos digitais, na lógica computacional e na programação de computadores.
+
+## Operações Lógicas Básicas
+
+A álgebra Booleana trabalha com **operações lógicas** que manipulam esses valores binários. As três operações principais são:
+
+### 1. **AND (E)**
+
+A operação **AND**, também chamada de *E lógico*, é representada pelos símbolos `∧` ou `·` (ponto). Ela retorna **verdadeiro** (1) somente se **todas as condições** envolvidas forem verdadeiras.
+
+**Exemplo**:
+
+**A ∧ B**: Só será **verdadeiro** se **A** e **B** forem ambos 1. Caso contrário, o resultado será 0.
+
+| A | B | A ∧ B |
+|---|---|-------|
+| 0 | 0 |   0   |
+| 0 | 1 |   0   |
+| 1 | 0 |   0   |
+| 1 | 1 |   1   |
+
+**Explicação**: A operação **A ∧ B** só retorna **1** se **A** e **B** forem **1**. Caso contrário, retorna **0**.
+
+### 2. **OR (OU)**
+
+A operação **OR**, também chamada de *OU lógico*, é representada pelos símbolos `∨` ou `+`. Ela retorna **verdadeiro** (1) se **pelo menos uma das condições** envolvidas for verdadeira.
+
+**Exemplo**:
+
+**A ∨ B**: Será **verdadeiro** se **A** ou **B** for 1. Se ambos forem 0, o resultado será 0.
+
+| A | B | A ∨ B |
+|---|---|-------|
+| 0 | 0 |   0   |
+| 0 | 1 |   1   |
+| 1 | 0 |   1   |
+| 1 | 1 |   1   |
+
+**Explicação**: A operação **A ∨ B** retorna **1** se **A** ou **B** forem **1**. Só retorna **0** se ambos forem **0**.
+
+### 3. **NOT (NÃO)**
+
+A operação **NOT**, também chamada de *NEGAÇÃO*, é representada pelo símbolo `¬` ou `!`. Ela inverte o valor lógico de uma expressão: transforma **verdadeiro** em **falso** e **falso** em **verdadeiro**.
+
+**Exemplo**:
+
+**¬A**: Se **A** for 1, **¬A** será 0. Se **A** for 0, **¬A** será 1.
+
+| A | ¬A |
+|---|----|
+| 0 |  1 |
+| 1 |  0 |
+
+**Explicação**: A operação **¬A** inverte o valor de **A**. Se **A** for **1**, a negação será **0** e vice-versa.
+
+## Exemplos Práticos de Aplicação
+
+Essas operações são amplamente utilizadas no design de **circuitos digitais** e **sistemas lógicos**. Por exemplo:
+
+- Em circuitos de **portas lógicas**, como **AND**, **OR** e **NOT**, essas operações determinam o comportamento do circuito com base nos valores de entrada.
+- Em **programação** e **inteligência artificial**, as operações booleanas ajudam a tomar decisões com base em condições lógicas.
+
+## Conclusão
+
+A álgebra Booleana é essencial para a computação moderna, sendo utilizada para construir **algoritmos**, **sistemas de computação** e até mesmo **redes neurais**. Com ela, podemos entender e manipular as **decisões lógicas** em um nível fundamental.
+
+Compreender essas operações é crucial para quem trabalha com **design de circuitos**, **programação** e **sistemas computacionais**, pois elas formam a base para o processamento de dados e a tomada de decisões nos sistemas digitais.
+
+>Referência: [UFSC](https://www.inf.ufsc.br/~j.guntzel/isd/isd2.pdf)

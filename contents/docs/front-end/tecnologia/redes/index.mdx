@@ -1,0 +1,97 @@
+# Protocolos, Roteadores e Switches
+
+## 1. O que é um Protocolo?
+![Protocolo](/assets/img/potrocolo-server.png)
+
+Um **protocolo** é um conjunto de regras que facilita a **formatação**, **transmissão** e **recebimento** de dados entre computadores ou dispositivos eletrônicos. 
+
+Esses protocolos são essenciais para garantir que a comunicação ocorra de maneira eficiente e compreensível entre os sistemas. No contexto de redes, usamos **protocolos de rede** que dependem de **servidores** e **roteadores** conectados a **terminais** para realizar essa troca de informações.
+
+Esses protocolos permitem a comunicação de dispositivos em uma rede, possibilitando a transferência de dados de maneira organizada e segura.
+
+### E se não houvessem Protocolos de rede?
+Sem protocolos, os computadores e outros dispositivos não saberiam como interagir uns com os outros. Como resultado, exceto para redes especializadas construídas em torno de uma arquitetura específica, não teríamos algo que é fundamental nos dias de hoje, ou seja, a Internet. Praticamente todos os usuários dependem de protocolos para conectividade.
+
+### Tipos de protocolos:
+![Protocolo](/assets/img/protocolo-img.jpg)
+#### 1. TCP:
+Tem a ver com conjunto de regras que está disposto na hora de troca de mensagem em pacotes de informações;
+
+#### 2. User Datagram Protocol:
+É um protocolo alternativo o TCP e é  utilizado para que haja o estabelecimento de conexões de baixa latência e tolerância a perdas;
+
+#### 3. IP:
+Utiliza um conjunto de regras para enviar e receber mensagens no nível de endereços IP;
+
+#### 4. Hypertext Transfer Protocol:
+O protocolo (HTTP) quanto o File Transfer Protocol (FTP), conta com um conjunto de regras pré-definidas para que haja exibição e troca de dados.
+
+#### 5. O Hyper Text Transfer Protocol Secure (HTTPS):
+E uma implementação do protocolo HTTP sobre uma camada adicional de segurança que utiliza o protocolo TLS/SSL. Essa camada adicional permite que os dados sejam transmitidos por meio de uma conexão criptografada e que se verifique a autenticidade do servidor e do cliente por meio de certificados digitais
+
+
+## 2. Qual a diferença entre Roteadores e switches?
+
+![Protocolo](/assets/img/roteador-vs-switch.webp)
+
+Roteadores direcionam dados entre diferentes redes, como a internet e redes locais, enquanto switches conectam dispositivos
+dentro de uma mesma rede, permitindo a transferência direta de dados entre eles em alta velocidade. Ambos desempenham papéis 
+cruciais no encaminhamento e gerenciamento de tráfego em redes. Vamos explorar suas diferenças de forma mais detalhada:
+
+### Roteadores:
+ Um roteador é responsável por direcionar o tráfego de dados entre diferentes redes. Ele atua como um "ponto de passagem"
+ entre redes distintas, como, por exemplo, a conexão entre a internet e uma rede local (LAN). O roteador utiliza informações de 
+ endereçamento IP (como o endereço IP de origem e destino) para encaminhar os pacotes de dados para o caminho correto, garantindo que
+ eles cheguem ao seu destino, mesmo que este esteja em uma rede diferente. Além disso, roteadores podem realizar funções adicionais, 
+ como a atribuição de endereços IP via DHCP (Dynamic Host Configuration Protocol), segurança de rede (através de firewalls) e até 
+ mesmo a conexão de diferentes tipos de tecnologias de rede, como redes sem fio (Wi-Fi) e cabeadas (Ethernet).
+
+### Switches:
+ Um switch, por outro lado, opera dentro de uma única rede, conectando dispositivos que fazem parte 
+ da mesma rede local. Ele utiliza endereços MAC (Media Access Control) para identificar os dispositivos e permitir a 
+ comunicação direta entre eles. Quando um dispositivo envia dados para outro, o switch direciona esses dados para o dispositivo
+ de destino, utilizando um processo altamente eficiente e de alta velocidade. Ao contrário do roteador, que trabalha com endereços IP, 
+ o switch trabalha com endereços MAC, permitindo uma transferência rápida e sem a necessidade de recorrer a roteamento entre diferentes 
+ redes. Em outras palavras, switches otimizam a comunicação dentro de uma rede, facilitando o tráfego local sem que haja a necessidade 
+ de um roteador para intermediar.
+
+### Papel Crucial de Ambos:
+
+Ambos desempenham papéis críticos no gerenciamento e encaminhamento de tráfego nas redes. Enquanto os roteadores garantem que os dados viajem entre redes diferentes, os switches garantem a comunicação eficiente e direta dentro de uma rede local.
+Em uma rede corporativa ou doméstica típica, os roteadores e switches frequentemente trabalham juntos. O roteador conecta a rede local à internet, enquanto os switches asseguram a troca de dados dentro da própria rede local, permitindo que computadores, impressoras, servidores e outros dispositivos se comuniquem de forma eficaz.
+
+## 3. Topologia de redes
+
+![Topologia das redes](/assets/img/topologia-das-redes.png)
+
+A topologia de rede refere-se à maneira como os dispositivos estão interconectados em uma rede de computadores. Existem várias topologias comuns:
+
+#### Topologia em Estrela: 
+Todos os dispositivos estão conectados a um ponto central, como um switch ou hub. Se um dispositivo falhar, não afeta diretamente os outros. 
+#### Topologia em Anel: 
+Os dispositivos são conectados em forma de anel, onde cada dispositivo está conectado ao próximo em uma única direção. Os dados circulam pelo anel até alcançar o destino.
+#### Topologia em Barramento: 
+Todos os dispositivos estão conectados a um único cabo (o barramento) compartilhado. Quando um dispositivo transmite, todos os outros recebem, mas apenas o destinatário correto interpreta os dados. 
+#### Topologia em Malha: 
+Cada dispositivo está conectado a todos os outros. Isso oferece redundância e várias rotas para os dados viajarem, o que aumenta a confiabilidade, mas pode exigir mais recursos.
+#### Topologia em Árvore:
+Uma combinação de topologias em estrela conectadas em uma estrutura hierárquica de árvore. É comumente encontrado em redes mais complexas, como redes corporativas.
+
+>**Obs**: Cada topologia possui vantagens e desvantagens em termos de escalabilidade, confiabilidade, facilidade de manutenção e custos. A escolha da topologia ideal depende das necessidades específicas da rede e dos requisitos de desempenho.
+
+### As topologia citadas acima:
+
+   Estelar, Anel,  Árvore     |  Barramento e Ponto a ponto  
+:-------------------------:|:-------------------------:
+![Topologias](/assets/img/topolia-1.png)  |  ![topologias](/assets/img/topolia-1.png) 
+
+## 4. Serviços de Rede e Cloud e Redes Virtuais:
+
+![Serviço em nuvem](/assets/img/cloud-service.jpg)
+
+Impressão em Rede: Impressoras conectadas à rede local permitem que vários usuários imprimam documentos de seus 
+próprios dispositivos, facilitando o compartilhamento de recursos de impressão.
+
+#### Cloud e Redes Virtuais:
+Computação em Nuvem (Cloud Computing): O Amazon Web Services (AWS) oferece uma variedade de serviços de computação em nuvem, permitindo que empresas hospedam sites, armazenem dados e executem aplicativos sem a necessidade de infraestrutura física.
+Redes Virtuais (Virtual Private Network - VPN): Uma VPN, como a NordVPN ou Express VPN, cria uma rede privada virtual sobre uma rede pública, permitindo que usuários acessem a internet de forma segura, mascarando seu endereço IP e protegendo seus dados.

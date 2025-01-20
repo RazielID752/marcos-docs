@@ -1,0 +1,200 @@
+---
+title: Operadores Aritméticos, Relacionais e Lógicos, Expressões
+description: Expressões executam ações específicas, baseadas em um operador com um ou dois operandos.
+---
+![Operadores](/assets/img/operadores.png)
+
+Um operando pode ser uma **constante**, uma **variável** ou o **resultado de uma função**. Os operadores podem ser classificados como **aritméticos**, **lógicos** e **relacionais**. Assim como em C, alguns operadores variam em funcionalidade dependendo do tipo de dados dos operandos especificados na expressão.
+
+---
+
+## Operadores Aritméticos
+
+**(+**, **-**, **\***, **/**, **\*\***, **%**)  
+
+Os operadores aritméticos executam operações matemáticas, como adição e subtração, com operandos.  
+
+Há dois tipos de operadores matemáticos:  
+1. **Unário**: Executa uma ação com um único operando.  
+2. **Binário**: Executa ações com dois operandos.  
+
+Em uma expressão complexa (com dois ou mais operandos), a ordem de avaliação depende de **regras de precedência**.
+
+## Operadores Aritméticos Unários
+
+
+Operadores unários são operadores aritméticos que desempenham uma ação em um único operando. A linguagem de script reconhece o negativo do operador unário `(-)`.
+O operador unário negativo inverte o sinal de uma expressão de positivo para negativo ou vice-versa. 
+
+O efeito geral é de multiplicar o número por `-1`. Exemplo:
+```js
+a = -10;
+```
+
+Os operadores Prefix incrementam ou decrementam a variável antes de remover a referência ao objeto, enquanto que os operadores Postfix incrementam ou decrementam a variável após fazer referência a ela. Exemplo:
+
+```js
+A=1; 
+B = a++; // b será igual a 1, a será igual a 2; 
+A = 1; 
+B = ++a; // b será igual a 2, a será igual a 2; 
+A= 1; 
+B = a--; // b será igual a 1, a será igual a 0;
+```
+
+#### Explicação:
+
+```js
+A = 1; // Definimos "A" como 1
+B = a++; // B recebe o valor de A (que é 1), depois A é incrementado em 1
+B será igual a 1, A será igual a 2
+
+A = 1; // Define A como 1 novamente (resetando o valor)
+B = ++a; // A é incrementado em 1, e depois o valor de A é atribuído a B
+// B será igual a 2, A será igual a 2
+
+A = 1; // Define A como 1 novamente (resetando o valor)
+B = a--; // B recebe o valor de A (que é 1), depois A é decrementado em 1
+// B será igual a 1, A será igual a 0
+```
+
+##### O que acontece:
+1. A variável `A` é inicializada com o valor `1`.
+2. O operador `a++` é postfix, ou seja, primeiro atribui o valor de `A` para `B` e só depois incrementa `A`.
+3. Resultado:
+- `B` recebe o valor original de `A`, que é `1`.
+- `A` é incrementado em `1`, tornando-se `2`.
+
+4. Saída:
+- `B = 1`
+- `A = 2`
+
+## Operadores Aritméticos Binários
+
+Insira um espaço antes e depois de um operador aritmético. Os operadores aritméticos binários suportados são listados abaixo.
+
+| **Operador** | **Nome**      | **Exemplo** | **Descrição**                                                                 |
+|--------------|---------------|-------------|-------------------------------------------------------------------------------|
+| `+`          | Adição        | `a + b`     | Soma os dois operandos                                                       |
+| `-`          | Subtração     | `a - b`     | Subtrai o segundo operando do primeiro                                       |
+| `*`          | Multiplicação | `a * b`     | Multiplica os dois operandos                                                 |
+| `/`          | Divisão       | `a / b`     | Divide o primeiro operando pelo segundo                                      |
+| `**`         | Potência      | `a ** b`    | Eleva o primeiro operando à potência do segundo operando                     |
+| `%`          | Módulo        | `a % b`     | Divide o primeiro operando pelo segundo operando e produz a parte restante   |
+
+### Operador de Designação `(=)`
+
+
+Utilize o operador de designação `(=)` para copiar uma constante, um literal, um resultado de expressão de variável ou um resultado de função para uma variável. A linguagem de script não suporta várias designações em uma única instrução `(como a=b=c=0)`. Os comprimentos das cadeias são definidos com base no tamanho da cadeia designada para a variável e pode mudar dinamicamente no tempo de execução.
+
+### Operadores Lógicos (E, OU, NOT)
+
+Os operadores lógicos permitem a combinação de mais de um teste relacional em uma comparação. Os operadores lógicos retornam um valor TRUE (1) ou FALSE (0). Os operadores lógicos têm precedência inferior aos operadores aritméticos.
+
+| **Operador** | **Nome** | **Exemplo**       | **Descrição**                                           |
+|--------------|----------|-------------------|--------------------------------------------------------|
+| `&&`         | AND (E)  | `expr1 && expr2`  | Verdadeira se **expr1** e **expr2** forem verdadeiras.  |
+| `\|\|`       | OR (OU)  | `expr1 \|\| expr2`| Verdadeira se **expr1** ou **expr2** for verdadeira.    |
+| `!`          | NOT (NÃO)| `!expr`           | Verdadeira se **expr** for falsa (inverte o valor lógico). |
+
+Os operadores relacionais são os seguintes:
+Tabela 3. Operadores Relacionais
+
+| **Símbolo** | **Operação**        | **Exemplo** | **Descrição**                                   |
+|-------------|---------------------|-------------|------------------------------------------------|
+| `<`         | Menor que           | `a < b`     | Verdadeira se **a** for menor que **b**.       |
+| `>`         | Maior que           | `a > b`     | Verdadeira se **a** for maior que **b**.       |
+| `==`        | Igual a             | `a == b`    | Verdadeira se **a** for igual a **b**.         |
+| `!=`        | Diferente de        | `a != b`    | Verdadeira se **a** for diferente de **b**.    |
+| `<=`        | Menor ou Igual a    | `a <= b`    | Verdadeiro se **a** for menor ou igual a **b**.|
+| `>=`        | Maior ou Igual a    | `a >= b`    | Verdadeiro se **a** for maior ou igual a **b**.|
+
+As comparações devem ser feitas em tipos de dados semelhantes - cadeia para cadeia, números para números. Se os tipos de dados forem diferentes, um erro de tempo de execução será causado.
+
+#### Mais sobre operadores lógicos
+
+`&&` Operador AND
+`||`   Operador OR
+`!`   Operador NOT
+
+#### && Operador AND
+Exemplo:
+```js
+//A condição é verdadeira se ambos os valores de entrada são verdadeiros.
+(4 > 3) && (5 + 2 == 7)
+```
+
+#### | | Operador OR
+```js
+//A condição é verdadeira se ambos os valores de entrada são verdadeiros
+(5>3)  || (7<8)
+```
+R:
+#### ! - Operador NOT
+O operador inverte uma condição
+```js
+!(5>3)
+```
+
+### Operadores podem ser encadeados
+
+A procedência é da esquerda para a direita
+<Note title="Apenas: (5>3) && (7<8) é Verdadeiro ">
+```js
+(5>3) && (7<8) && (2>5) …
+```
+</Note>
+
+A trocando o operador
+<Note title="Verdadeiro">
+```js
+(5>3) && (7<8)  | |  (2>5) …
+```
+</Note>
+
+## Resolução
+
+#### && Operador AND
+Exemplo:
+```js
+//A condição é verdadeira se ambos os valores de entrada são verdadeiros.
+(4 > 3) && (5 + 2 == 7)
+```
+1 ou verdadeiro
+
+#### | | Operador OR
+```js
+//A condição é verdadeira se ambos os valores de entrada são verdadeiros
+(5>3)  || (7<8)
+```
+##### Explicação:
+`(5 > 3)`  → verdadeiro (porque 5 é maior que 3)
+
+`(7 < 8)` → verdadeiro (porque 7 é menor que 8)
+
+#### ! - Operador NOT
+O operador inverte uma condição
+```js
+!(5>3)
+```
+0 ou falso: porque inverteu
+
+
+## Comparações de Cadeia
+Duas cadeias são consideradas iguais se corresponderem caractere a caractere e tiverem o mesmo comprimento. As cadeias são comparadas caractere a caractere da esquerda para a direita até todos os caracteres terem sido correspondidos ou uma das cadeias ter sido exaurida. 
+
+Se o final de uma cadeia for atingido antes do final da cadeia correspondente, as cadeias serão consideradas como tendo comprimento desigual e resultam em uma condição diferente. Se qualquer caractere de um cadeia não corresponder ao caractere correspondente na outra cadeia, a comparação parará e as cadeias serão consideradas diferentes. As cadeias fazem distinção entre maiúsculas e minúsculas. Exemplos:
+
+```js
+Str1 = "abcdefg"; 
+Str2 = "abcdefg"; 
+Str3 = "abcdef"; 
+Str4 = "ABCDEFG"; 
+If (str1 == str2)... resulta em uma condição igual/verdadeira 
+If (str1 == str3).... Resulta em uma condição diferente
+porque str3 é menor que str1 If (str1 == str4) ... Resulta em uma
+condição diferente porque as cadeias têm distinções entre maiúsculas
+e minúsculas diferentes;
+```
+
+> **Referência: [IBM](https://www.ibm.com/docs/pt-br/tcamfma/6.3.0?topic=tesl-operators-expressions)**

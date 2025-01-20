@@ -1,0 +1,267 @@
+---
+title: Introdução a liguagem C
+description: A linguagem C é uma das linguagens de programação mais influentes e populares da história da computação. 
+---
+![Linguagem C](/assets/img/linguagem-c.jpg)
+
+Desenvolvida por Dennis Ritchie nos anos 70, a linguagem C é conhecida por sua eficiência, portabilidade e poder. Ela foi fundamental para o desenvolvimento de sistemas operacionais, aplicativos e programas devido à sua capacidade de acesso direto à memória e controle de hardware, oferecendo um equilíbrio único entre simplicidade e poder para os programadores.
+
+C é considerada uma linguagem de programação de nível médio. Isso significa que ela possui recursos tanto das linguagens de alto nível, que são mais fáceis de entender e usar, quanto das linguagens de baixo nível, que têm mais controle sobre o hardware do computador. Essa característica faz da linguagem C uma escolha popular para desenvolvimento de sistemas e aplicativos onde eficiência e controle são essenciais.
+
+>Ferramenta que a gente vai usar para codar vai ser: [Replit](https://replit.com/)
+## Comandos
+
+Comando: `Printf`
+
+O `printf()` é um comando em C que é usada para imprimir texto na tela. Ele permite formatar a saída de várias maneiras, especificando o formato dos dados a serem exibidos.
+
+```c
+printf("Olá, mundo!\n");
+```
+
+Comando: `Scanf`
+
+O `scanf()` é usado para receber entrada do usuário e armazená-la em variáveis.
+uma variável é um símbolo que representa um número arbitrário, não totalmente especificado ou desconhecido.
+Exemplo:
+
+```c
+int num;
+scanf("%d", &num);
+```
+`int` `num`; declara uma variável inteira chamada num e o `int` serve para indicar que é um número inteiro.
+`scanf("%d", &num)`; espera que o usuário insira um número inteiro e armazena esse valor na variável `num`.
+
+`%d` é chamado de especificador de formato em C e é usado com a função `printf()` (e também com `scanf()` para entrada) para indicar que um argumento será tratado como um número inteiro.
+
+No contexto de `scanf()` ou de qualquer função que aceite argumentos por referência (como `&num`), o `&` é usado para passar o endereço de memória de uma variável para a função.
+
+Comandos: `If` e `Else`
+
+O `if-else` é uma estrutura de controle de fluxo que executa um bloco de código se uma condição for verdadeira e outro bloco de código se a condição for falsa.
+Exemplo:
+
+
+```c
+int num = 10;
+if (num > 5) {
+    printf("O número é maior que 5.\n");
+} else {
+    printf("O número não é maior que 5.\n");
+}
+```
+
+- O `if` verificar se uma condição e verdadeira, e o else verifica se a condição é falsa.
+- `if (num > 5)` verifica se num é maior que 5.
+- Se não for o `else` verifica e diz que "o número não é maior que 5".
+- `printf()` é executado se a condição for verdadeira, caso contrário, o bloco `else` é executado.
+
+Comandos: `While`
+
+O while loop executa um bloco de código enquanto uma condição especificada for verdadeira.
+Exemplo:
+
+
+```c
+int i = 0;
+while (i < 5) {
+    printf("%d ", i);
+    i++;
+}
+```
+
+- `i` < 5 é a condição de continuação do loop.
+- `i++` incrementa `i` a cada iteração.
+- O loop continuará enquanto i for menor que 5.
+
+Comandos: `For`
+
+O for é loop usado para iterar sobre um bloco de código um número específico de vezes(Cria repetições)
+Exemplo:
+
+Comandos: `Arrays`
+
+Arrays são estruturas de dados em C que armazenam um conjunto fixo de elementos do mesmo tipo em uma ordem sequencial.
+Exemplo:
+
+
+```c
+int arr[5] = {1, 2, 3, 4, 5};
+for (int i = 0; i < 5; i++) {
+    printf("%d ", arr[i]);
+}
+```
+
+- int arr[5] declara um array de inteiros com tamanho 5.
+- `{1, 2, 3, 4, 5}`são os valores atribuídos ao array.
+- `arr[i]` acessar cada elemento do array durante o loop para imprimi-los.
+
+Comandos: `Float`
+
+Float em uma linguagem de programação C pode ser referido como um tipo de dados usado para armazenar números de ponto flutuante.
+
+Exemplo:
+
+
+```c
+    float altura = 1.75;
+    printf("Minha altura é: %.2f metros\n", altura);
+```
+
+- `%.2f` na função printf() indica que queremos imprimir a variável altura com precisão de duas casas decimais. Isso resultará em "Minha altura é: 1.75 metros" impresso na tela.
+- O `%f` é apenas um dos especificadores de formato em C, e é usado exclusivamente para variáveis do tipo `float`.
+
+Comandos: `Struct`
+
+o `struct` é uma palavra-chave utilizada para definir uma estrutura de dados personalizada. Uma estrutura `(struct)` é um tipo de dado composto que permite combinar diferentes tipos de dados sob um único nome.
+
+A ideia por trás de uma estrutura é reunir variáveis de tipos diferentes (ou do mesmo tipo) em um único bloco de dados, permitindo que você crie um novo tipo de dado que represente uma entidade mais complexa.
+
+Por exemplo, se você quiser representar informações sobre um carro, poderia usar uma struct para agrupar seu modelo `(string)`, ano `(int)`, cor `(string)` e preço `(float)` em uma única entidade:
+Exemplo:
+
+```c
+ struct Carro {
+    char modelo[50];
+    int ano;
+    char cor[20];
+    float preco;
+};
+```
+
+Comandos: `Char`
+
+Em linguagens como C e C++, o tipo char é utilizado para representar caracteres alfanuméricos e símbolos, sendo armazenado em 1 byte de memória. 
+
+Por exemplo:
+
+```c
+   // Declarando e inicializando variáveis do tipo char
+    char letra = 'A';
+    char numero = '7';
+    char simbolo = '@';
+
+    // Imprimindo os caracteres e seus valores na tabela ASCII
+    printf("Letra: %c, Valor na tabela ASCII: %d\n", letra, letra);
+    printf("Número: %c, Valor na tabela ASCII: %d\n", numero, numero);
+    printf("Símbolo: %c, Valor na tabela ASCII: %d\n", simbolo, simbolo);
+```
+
+### Lista 1 de Exercícios C:
+
+1. Crie um Hello, World!
+2. Crie um código que receber e mostrar um número inteiro digitado pelo usuário.
+3. Crie um programa que solicite dois números do usuário e realize as quatro operações matemáticas básicas: Soma, Subtração, Multiplicação, Divisão.
+4. Crie um programa que o usuário possa inserir um número e determine se é par ou ímpar.
+5. Solicite um número do usuário e some todos os números de 1 até o número inserido.
+6. Peça ao usuário para inserir as notas de um aluno em três disciplinas diferentes e calcule a média.
+7. Não fazer // Crie um programa que imprima os primeiros N números pares, onde N é um número inserido pelo usuário.
+8. Faça um programa que leia um valor de conta de restaurante, representando o gasto realizado pelo cliente e imprimir o valor total a ser pago, considerando que o restaurante cobra 10% de taxa de serviço do garçom.
+9. Ler um número inteiro e imprimir seu sucessor e seu antecessor.
+10. Faça um programa em C que receba(leia) o nome de um usuário e imprima na tela.
+
+### Lista 2 de Exercícios C:
+ 
+1. Faça um programa que solicite ao usuário a digitação de 2 números e informe:
+2. A soma dos números;
+3. O produto do primeiro número pelo quadrado do segundo;
+4. O resto da divisão do primeiro número pelo segundo
+5. Escreva um programa que recebe um horário (horas, minutos, segundos) e determina quantos segundos já se passaram desde que o dia começou e quantos segundos faltam para o fim do dia. Assuma 24h
+6. Escreva um programa que receba a nota de 6 bimestres e exiba a média da nota do aluno, e mencione se foi reprovado ou aprovado.
+
+### Exercício Hard C:
+
+```c
+Comparando Nomes
+
+Instruções:
+Escreva um programa em sua linguagem de programação preferida que compare 
+nomes de pessoas e forneça resultados com base nessas comparações.
+
+Requisitos do Programa:
+1. **Entrada de Dados:**
+   - Solicite ao usuário que insira dois nomes.
+
+2. **Comparação:**
+   - Compare os dois nomes inseridos, considerando:
+       - Se os nomes são idênticos.
+       - Se os nomes são diferentes.
+       - Qual nome vem primeiro em ordem alfabética.
+
+3. **Saída:**
+   - Exiba os resultados das comparações.
+
+Exemplo de Saída:
+- Se os nomes forem "Ana" e "Ana", o programa deve exibir: "Os nomes são idênticos."
+- Se os nomes forem "João" e "Maria", o programa deve exibir: "Os nomes são diferentes."
+- Se os nomes forem "Carlos" e "Ana", o programa deve exibir: "Ana vem antes de Carlos em ordem alfabética."
+Dicas:
+- Use funções ou métodos de comparação de strings disponíveis em sua 
+linguagem de programação para facilitar a tarefa.
+- Considere letras maiúsculas e minúsculas, a menos que especificado de outra forma.
+- Garanta que seu programa lide com espaços em branco no início ou final dos nomes.
+Isso pode ser um bom desafio para praticar a manipulação de strings e a comparação 
+de valores em linguagens de programação!
+
+```
+
+<Note title="Explicação de algumas palavras chaves">
+Uma string é um tipo de dado utilizado em programação que representa uma sequência de caracteres. Esses caracteres podem ser letras, números, símbolos, espaços em branco ou outros tipos de caracteres especiais. As strings são usadas para armazenar e manipular texto em um programa.
+
+Exemplos de strings:
+- "Olá, Mundo!" (contém letras e pontuação)
+- "12345" (contém apenas números, mas é tratado como texto)
+- " " (um espaço em branco também é uma string)
+
+Como uma string é representada:
+Em linguagens de programação, as strings geralmente são delimitadas por aspas:
+- Aspas duplas: "Texto"
+- Aspas simples: 'Texto'
+Algumas linguagens, como JavaScript e Python, também permitem usar backticks (crase) para criar strings, permitindo interpolação de variáveis ou múltiplas linhas:
+- Template strings (JavaScript/TypeScript): `Texto ${variável}`
+
+Características das Strings:
+- Imutabilidade: Em muitas linguagens (como JavaScript e Python), uma vez que uma string é criada, ela não pode ser alterada diretamente. Quando você modifica uma string, uma nova é criada com o valor alterado.
+- Manipulação: As strings oferecem várias operações, como concatenação (juntar), divisão, busca, substituição, entre outras.
+
+O que é Interpolação?
+- Interpolação é o processo de incluir valores ou expressões dentro de uma string.
+</Note> 
+
+
+### Resposta do exercício comparador de nomes
+
+```c
+#include <stdio.h>
+#include <string.h> // biblioteca
+
+int main() {
+    char nome1[50], nome2[50];
+
+    printf("Digite o primeiro nome: ");
+    scanf("%s", nome1);
+
+    printf("Digite o segundo nome: ");
+    scanf("%s", nome2);
+
+    // Comparação de strings usando a função strcmp da biblioteca string.h
+    int resultado = strcmp(nome1, nome2);
+
+    if (resultado == 0) {
+        printf("Os nomes são idênticos.\n");
+    } else {
+        printf("Os nomes são diferentes.\n");
+
+        if (resultado < 0) {
+            printf("%s vem antes de %s em ordem alfabética.\n", nome1, nome2);
+        } else {
+            printf("%s vem antes de %s em ordem alfabética.\n", nome2, nome1);
+        }
+    }
+
+    return 0;
+}
+
+```
+
+>Referências [PUCRS](https://www.inf.pucrs.br/~pinho/LaproI/IntroC/IntroC.htm), [Alura](https://www.alura.com.br/artigos/strings-com-javascript-o-que-sao-e-como-manipular)

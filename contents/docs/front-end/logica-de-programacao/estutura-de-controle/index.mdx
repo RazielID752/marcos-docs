@@ -1,0 +1,41 @@
+---
+title: Estruturas de controle e repetição
+---
+
+O que é estrutura de repetição?
+
+Dentro da lógica de programação é uma estrutura que permite executar mais de uma vez o mesmo comando ou conjunto de comandos, de acordo com uma condição ou com um contador.
+
+São utilizadas, por exemplo, para repetir ações semelhantes que são executadas para todos os elementos de uma lista de dados, ou simplesmente para repetir um mesmo processamento até que a condição seja satisfeita.
+
+Existem 4 estruturas de repetição básica para praticamente todas as linguagens de programação, seja C ou javascript.
+
+![Contole de repeticao](/assets/img/controle-de-repeticao.png)
+
+While (enquanto)
+
+- É dentre as 3 a mais simples.
+- Repete um bloco de código enquanto uma condição permanecer verdadeira
+- Caso a condição seja falsa, os comandos dentro do while não serão executados e a execução continuará  com os comandos após o while
+- A repetição do while é controlada por uma condição que verifica alguma variável. Porém para que o while funcione corretamente é importante que essa variável sofra alteração dentro do while. Ex: um contador.
+- Após entrar dentro da repetição, o bloco de comandos sempre será executado, mesmo que dentro do bloco a variável que está controlando a execução seja alterada.
+
+Exemplo de código:
+
+```c
+#include <stdio.h>
+
+int main() {
+    int contador = 1;  // Inicializa o contador
+
+    // O loop while continuará enquanto o contador for menor ou igual a 5
+    while (contador <= 5) {
+        printf("Contador: %d\n", contador);  // Exibe o valor do contador
+        contador++;  // Incrementa o contador para evitar um loop infinito
+    }
+
+    printf("Loop finalizado!\n");
+
+    return 0;
+}
+```
