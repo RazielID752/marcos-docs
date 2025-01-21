@@ -1,33 +1,4 @@
-## AriaDocs - Documentation Template
-
-This feature-packed documentation template, built with Next.js, offers a sleek and responsive design, perfect for all your project documentation needs.
-
-<img src="./public/public-og.png" />
-
-<br/>
-
-Here are all versions of the AriaDocs template, each crafted for specific use cases:
-
-
-- **Advanced Docs:** A comprehensive template offering extensive features for in-depth documentation needs. Perfect for larger projects that require detailed explanations and advanced configurations.  
-  [Explore the Advanced Docs](https://github.com/nisabmohd/Aria-Docs/tree/master)
-
-- **Lite Version:** A streamlined, no-frills template perfect for straightforward documentation needs.  
-  [Explore the Lite Version](https://github.com/nisabmohd/Aria-Docs/tree/minimal-docs)
-
-- **Version with Versioning:** A powerful option for projects that require historical documentation tracking. Manage multiple versions of your docs effortlessly.  
-  [Check out the Versioning Feature](https://github.com/nisabmohd/Aria-Docs/tree/version_docs)
-
-- **i18n Support Version (WIP):** Designed for international audiences, this version will offer comprehensive multilingual support.  
-  [Preview the i18n Support](https://github.com/nisabmohd/Aria-Docs/tree/i18n-support)
-
-### Quick Start
-
-You can create a new Ariadocs project using the command:
-
-```plaintext
-npx create-aria-doc <project-directory>
-```
+## Projeto ProAcademy - documentação
 
 ### Expected Output
 
@@ -92,9 +63,53 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 | Static Site Generation        | Generate a static, high-performance site.                |
 | SEO-Optimized                 | Structured for optimal search engine indexing.           |
 
+# Back-end - Projeto ProAcademy - Nome provisorio
 
-## Additional Themes
+A API estará disponível para testes em http://localhost:3000
 
-<img src="./public/halloween.png" alt="halloween" />
-<img src="./public/nebula.png" alt="halloween" />
-<img src="./public/ocean.png" alt="halloween" />
+### Para realizar login:
+```shell
+[POST] http://localhost:3000/api/auth/login
+```
+Utilizando application/json, enviar Body request conforme abaixo:
+```json
+{
+    "email": "n7smarcos@gmail.com",
+    "password": "Aa@1234"
+}
+```
+
+### Criação de usuário:
+
+Headers
+```json
+{
+ "Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZmVsaXBwZSIsInJvbGUiOiJHRVIiLCJ1c2VyX2lkIjoiMTIyMyIsInNlcnZpY2VzIjpbXSwiZXZuIjoic2ltIiwiaXNzIjoic2VsZnJldGFpbCIsImlhdCI6MTcyODU1OTIzNiwiZXhwIjoxNzI4NTk1MjM2LCJ1c2VyX3R5cGUiOiIxIn0.lwtN_bHddSrGRLN363JKFvteWNwxM9BKLDn3pHYS45Q" 
+}
+```
+
+```shell
+[POST] http://localhost:3000/api/users/create
+```
+Exemplo de response:
+```json
+{
+  "email": "marcos@example.com",
+  "name": "lucas Castro",
+  "password": "senha123",
+  "role": "SUPER_ADMIN"
+}
+```
+
+Tipo de usuário
+"ALUNO" | "GESTOR" | "SUPER_ADMIN"
+
+
+Criação de usuário:
+
+Headers
+```json
+{
+ "Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZmVsaXBwZSIsInJvbGUiOiJHRVIiLCJ1c2VyX2lkIjoiMTIyMyIsInNlcnZpY2VzIjpbXSwiZXZuIjoic2ltIiwiaXNzIjoic2VsZnJldGFpbCIsImlhdCI6MTcyODU1OTIzNiwiZXhwIjoxNzI4NTk1MjM2LCJ1c2VyX3R5cGUiOiIxIn0.lwtN_bHddSrGRLN363JKFvteWNwxM9BKLDn3pHYS45Q" 
+}
+```
