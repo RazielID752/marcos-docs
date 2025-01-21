@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { PrismaClient } from "@prisma/client";
-import authMiddleware  from "@/middleware/auth";
+import authMiddleware from "@/middleware/auth";
 
 const prisma = new PrismaClient();
 
@@ -16,7 +16,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.status(405).json({ error: "Método não permitido" });
   }
 
-  const { role: currentUserRole } = req.user!; // Extraído do middleware
+  const { role: currentUserRole } = req.user!; 
   const { email, name, password, role }: CreateUserRequestBody = req.body;
 
   if (currentUserRole !== "GESTOR" && currentUserRole !== "SUPER_ADMIN") {
@@ -26,10 +26,10 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     const user = await prisma.usuario.create({
       data: {
-      email,
-      nome: name,
-      senha: password,
-      tipo: role,
+        email,
+        nome: name,
+        senha: password,
+        tipo: role,
       },
     });
 

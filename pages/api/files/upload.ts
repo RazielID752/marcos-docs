@@ -4,16 +4,14 @@ import fs from "fs";
 import path from "path";
 
 const prisma = new PrismaClient();
-const uploadDir = "./uploads"; // Diretório local para armazenar arquivos
+const uploadDir = "./uploads"; 
 
-// Configuração do Next.js para desativar o bodyParser
 export const config = {
   api: {
-    bodyParser: false, // Desativa o parser para lidar com uploads de arquivo
+    bodyParser: false, 
   },
 };
 
-// Define a interface para a requisição autenticada
 interface AuthenticatedRequest extends NextApiRequest {
   user?: {
     id: string;
@@ -38,12 +36,10 @@ export default async function handler(req: AuthenticatedRequest, res: NextApiRes
     return res.status(403).json({ error: "Permissão negada" });
   }
 
-  // Garantir que o diretório de upload existe
   if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir, { recursive: true });
   }
 
-  // Processar o upload manualmente
   const chunks: Buffer[] = [];
   req.on("data", (chunk) => {
     chunks.push(chunk);
@@ -51,9 +47,8 @@ export default async function handler(req: AuthenticatedRequest, res: NextApiRes
 
   req.on("end", async () => {
     const buffer = Buffer.concat(chunks);
-
-    // Extração de dados do cabeçalho multipart/form-data
     const boundary = req.headers["content-type"]?.split("boundary=")[1];
+
     if (!boundary) {
       return res.status(400).json({ error: "Boundary não encontrado no cabeçalho da requisição" });
     }
@@ -65,29 +60,26 @@ export default async function handler(req: AuthenticatedRequest, res: NextApiRes
       return res.status(400).json({ error: "Arquivo não encontrado no corpo da requisição" });
     }
 
-    // Extraindo o nome do arquivo
     const filenameMatch = filePart.match(/filename="(.+?)"/);
     if (!filenameMatch) {
       return res.status(400).json({ error: "Nome do arquivo não encontrado" });
     }
 
     const originalFilename = filenameMatch[1];
-    const fileStartIndex = filePart.indexOf("\r\n\r\n") + 4; // Pula os cabeçalhos
+    const fileStartIndex = filePart.indexOf("\r\n\r\n") + 4;
     const fileData = filePart.slice(fileStartIndex, filePart.lastIndexOf("\r\n"));
 
     const filePath = path.join(uploadDir, originalFilename);
 
     try {
-      // Salvar o arquivo no sistema de arquivos
       fs.writeFileSync(filePath, fileData, "binary");
 
-      // Salvar os dados no banco de dados
       const uploadedFile = await prisma.arquivos.create({
         data: {
           nome: originalFilename,
           caminho: filePath,
           tipo: "arquivo",
-          alunoId: Number(userId), // Relaciona o arquivo ao aluno
+          alunoId: Number(userId),
         },
       });
 

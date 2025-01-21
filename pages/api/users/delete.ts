@@ -22,7 +22,7 @@ export default async function handler(req: AuthenticatedRequest, res: NextApiRes
   }
 
   const { role } = user;
-  const { userId } = req.body;
+  const { userId } = req.body; // userId no corpo da requisição
 
   if (role !== "SUPER_ADMIN") {
     return res.status(403).json({ error: "Permissão negada" });
