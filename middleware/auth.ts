@@ -1,25 +1,34 @@
-import { Usuario } from './../node_modules/.pnpm/@prisma+client@6.2.1_prisma@6.2.1/node_modules/.prisma/client/index.d';
+import { NextApiRequest, NextApiResponse, NextApiHandler } from "next";
 import jwt from "jsonwebtoken";
-import { NextApiRequest, NextApiResponse } from "next";
 
-const authenticate = (handler: Function) => {
+interface JwtPayload {
+  id: string;
+  role: "ALUNO" | "GESTOR" | "SUPER_ADMIN";
+}
+
+const authMiddleware = (handler: NextApiHandler) => {
   return async (req: NextApiRequest, res: NextApiResponse) => {
-    const { authorization } = req.headers;
+    const authHeader = req.headers.authorization;
 
-    if (!authorization || !authorization.startsWith("Bearer ")) {
-      return res.status(401).json({ error: "Token não fornecido" });
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      return res.status(401).json({ error: "Token não fornecido ou inválido" });
     }
 
-    const token = authorization.split(" ")[1];
+    const token = authHeader.split(" ")[1]; // Extrai o token após "Bearer"
 
     try {
-      const decoded = jwt.verify(token, process.env.JWT_SECRET!);
-      req.Usuario = decoded; // Adiciona o usuário à requisição
-      return handler(req, res);
+      if (!process.env.JWT_SECRET) {
+        throw new Error("JWT_SECRET não está configurado");
+      }
+
+      const decoded = jwt.verify(token, process.env.JWT_SECRET) as JwtPayload;
+      req.user = decoded; // Adiciona o usuário decodificado à requisição
+
+      return handler(req, res); // Continua para o handler principal
     } catch (error) {
       return res.status(401).json({ error: "Token inválido ou expirado" });
     }
   };
 };
 
-export default authenticate;
+export default authMiddleware;

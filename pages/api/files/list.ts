@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
+import authMiddleware from '@/middleware/auth'; // Importando o middleware
 
 const prisma = new PrismaClient();
 
@@ -10,7 +11,7 @@ interface AuthenticatedRequest extends NextApiRequest {
   };
 }
 
-export default async function handler(req: AuthenticatedRequest, res: NextApiResponse) {
+ async function handler(req: AuthenticatedRequest, res: NextApiResponse) {
   if (req.method !== "GET") {
     return res.status(405).json({ error: "Método não permitido" });
   }
@@ -61,3 +62,5 @@ export default async function handler(req: AuthenticatedRequest, res: NextApiRes
     return res.status(500).json({ error: "Erro ao listar arquivos", details: error.message });
   }
 }
+
+export default authMiddleware(handler);
