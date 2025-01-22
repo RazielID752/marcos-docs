@@ -38,7 +38,11 @@ export default async function handler(req: AuthenticatedRequest, res: NextApiRes
     await prisma.usuario.delete({ where: { id: Number(userId) } });
 
     return res.status(200).json({ message: "Usuário excluído com sucesso" });
-  } catch (error: any) {
-    return res.status(500).json({ error: "Erro ao excluir usuário", details: error.message });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return res.status(500).json({ error: "Erro ao excluir o usuário", details: error.message });
+    } else {
+      return res.status(500).json({ error: "Erro ao excluir o usuário", details: "Erro desconhecido" });
+    }
   }
 }

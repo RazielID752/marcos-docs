@@ -84,8 +84,12 @@ export default async function handler(req: AuthenticatedRequest, res: NextApiRes
       });
 
       return res.status(201).json(uploadedFile);
-    } catch (error: any) {
-      return res.status(500).json({ error: "Erro ao salvar arquivo", details: error.message });
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        return res.status(500).json({ error: "Erro ao salvar arquivo", details: error.message });
+      } else{
+        return res.status(500).json({ error: "Erro ao salvar arquivo", details: "Erro desconhecido" });
+      }
     }
   });
 

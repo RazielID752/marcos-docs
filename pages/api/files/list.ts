@@ -59,8 +59,12 @@ async function handler(req: AuthenticatedRequest, res: NextApiResponse) {
     });
 
     return res.status(200).json(files);
-  } catch (error: any) {
+  } catch (error: unknown) {
+   if(error instanceof Error){
     return res.status(500).json({ error: "Erro ao listar arquivos", details: error.message });
+   } else{
+    return res.status(500).json({ error: "Erro ao listar arquivos", details: "Erro desconhecido" });
+   }
   }
 }
 

@@ -34,11 +34,18 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
     return res.status(201).json(user);
-  } catch (error: any) {
-    return res.status(500).json({
-      error: "Erro ao criar o usuário",
-      details: error.message,
-    });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return res.status(500).json({
+        error: "Erro ao criar o usuário",
+        details: error.message,
+      });
+    } else{
+      return res.status(500).json({
+        error: "Error ao criar o usuário",
+        details: "Error desconhecido",
+      });
+    }
   }
 }
 
