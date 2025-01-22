@@ -35,8 +35,9 @@ async function handler(req: AuthenticatedRequest, res: NextApiResponse) {
         where: { alunoId: alunoIdNumber },
       });
       return res.status(200).json(files);
-    } catch (error: any) {
-      return res.status(500).json({ error: "Erro ao listar arquivos", details: error.message });
+    } catch (error) {
+      // Aqui, vamos usar 'unknown' e tratar o erro adequadamente
+      return res.status(500).json({ error: "Erro ao listar arquivos", details: (error as Error).message });
     }
   }
 
@@ -59,12 +60,9 @@ async function handler(req: AuthenticatedRequest, res: NextApiResponse) {
     });
 
     return res.status(200).json(files);
-  } catch (error: unknown) {
-   if(error instanceof Error){
-    return res.status(500).json({ error: "Erro ao listar arquivos", details: error.message });
-   } else{
-    return res.status(500).json({ error: "Erro ao listar arquivos", details: "Erro desconhecido" });
-   }
+  } catch (error) {
+    // Tratando o erro como 'unknown' e verificando se é uma instância de Error
+    return res.status(500).json({ error: "Erro ao listar arquivos", details: (error as Error).message });
   }
 }
 
