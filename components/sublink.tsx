@@ -76,7 +76,7 @@ export default function SubLink({
             {items?.map((innerLink) => {
               const modifiedItems = {
                 ...innerLink,
-                href: `${href + innerLink.href}`,
+                href: `${href}${innerLink.href}`,
                 level: level + 1,
                 isSheet,
               };
