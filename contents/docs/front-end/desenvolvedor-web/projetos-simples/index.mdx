@@ -1,0 +1,169 @@
+---
+title: "Projetos-simples"
+description: "JavaScript"
+---
+
+# Projetos Práticos
+
+## 1. Consumo de API (Busca no GitHub)
+Esse projeto permite buscar informações de um usuário no GitHub e exibir os dados na tela.
+
+📄 Código Completo
+HTML + CSS + JavaScript
+
+HTML:
+```html
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Usuário do GitHub</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        input, button { padding: 10px; margin: 10px; }
+        .container { margin-top: 20px; }
+        .profile { display: none; margin-top: 20px; }
+        img { width: 100px; border-radius: 50%; }
+    </style>
+</head>
+<body>
+    <h2>Buscar Usuário do GitHub</h2>
+    <input type="text" id="username" placeholder="Digite um nome de usuário">
+    <button onclick="buscarUsuario()">Buscar</button>
+
+    <div class="profile" id="profile">
+        <img id="avatar" src="" alt="Avatar">
+        <p><strong>Nome:</strong> <span id="nome"></span></p>
+        <p><strong>Repositórios:</strong> <span id="repos"></span></p>
+        <p><strong>Seguidores:</strong> <span id="seguidores"></span></p>
+    </div>
+
+    <script>
+        async function buscarUsuario() {
+            let username = document.getElementById("username").value;
+            let url = `https://api.github.com/users/${username}`;
+
+            try {
+                let resposta = await fetch(url);
+                let dados = await resposta.json();
+
+                if (dados.message) {
+                    alert("Usuário não encontrado!");
+                    return;
+                }
+
+                document.getElementById("avatar").src = dados.avatar_url;
+                document.getElementById("nome").innerText = dados.name || "Sem nome";
+                document.getElementById("repos").innerText = dados.public_repos;
+                document.getElementById("seguidores").innerText = dados.followers;
+                document.getElementById("profile").style.display = "block";
+            } catch (error) {
+                alert("Erro ao buscar usuário!");
+            }
+        }
+    </script>
+</body>
+</html>
+
+```
+
+## 2. Lista de Tarefas (To-Do List)
+Esse projeto permite adicionar tarefas a uma lista e removê-las ao clicar.
+
+📄 Código Completo
+HTML + CSS + JavaScript
+```HTML
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        input, button { padding: 10px; margin: 10px; }
+        ul { list-style: none; padding: 0; }
+        li { background: #f4f4f4; margin: 5px; padding: 10px; display: flex; justify-content: space-between; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Lista de Tarefas</h2>
+    <input type="text" id="tarefa" placeholder="Digite uma tarefa">
+    <button onclick="adicionarTarefa()">Adicionar</button>
+
+    <ul id="lista"></ul>
+
+    <script>
+        function adicionarTarefa() {
+            let tarefa = document.getElementById("tarefa").value;
+            if (tarefa === "") return alert("Digite uma tarefa!");
+
+            let li = document.createElement("li");
+            li.innerText = tarefa;
+            li.onclick = function() { this.remove(); }; // Remove ao clicar
+
+            document.getElementById("lista").appendChild(li);
+            document.getElementById("tarefa").value = ""; // Limpa input
+        }
+    </script>
+</body>
+</html>
+```
+
+## 3. Calculadora Simples
+Esse projeto cria uma calculadora funcional para somar, subtrair, multiplicar e dividir números.
+
+📄 Código Completo
+HTML + CSS + JavaScript
+
+```HTML
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        input, button { padding: 10px; margin: 5px; }
+        #resultado { font-size: 20px; margin-top: 10px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h2>Calculadora Simples</h2>
+    <input type="number" id="num1" placeholder="Número 1">
+    <input type="number" id="num2" placeholder="Número 2"><br>
+
+    <button onclick="calcular('+')">+</button>
+    <button onclick="calcular('-')">-</button>
+    <button onclick="calcular('*')">*</button>
+    <button onclick="calcular('/')">/</button>
+
+    <p id="resultado">Resultado: </p>
+
+    <script>
+        function calcular(operador) {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Digite números válidos!");
+                return;
+            }
+
+            let resultado;
+            switch (operador) {
+                case '+': resultado = num1 + num2; break;
+                case '-': resultado = num1 - num2; break;
+                case '*': resultado = num1 * num2; break;
+                case '/': resultado = num2 !== 0 ? num1 / num2 : "Erro (divisão por zero)"; break;
+                default: resultado = "Operação inválida";
+            }
+
+            document.getElementById("resultado").innerText = "Resultado: " + resultado;
+        }
+    </script>
+</body>
+</html>
+```

@@ -1,0 +1,453 @@
+---
+title: "Comandos em JavaScript"
+description: "JavaScript"
+---
+
+# 1. Primeiros comandos
+Executando no navegador (DevTools Console):
+- Abra o console do navegador ` (F12 → Console)`  e digite:
+
+```JS
+console.log("Olá, mundo!");
+```
+
+## 2. Incluindo JavaScript no HTML
+- Crie um arquivo index.html e adicione:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro JS</title>
+</head>
+<body>
+    <h1>Bem-vindo ao JavaScript!</h1>
+    <script>
+        alert("Olá, seja bem-vindo!");
+    </script>
+</body>
+</html>
+```
+
+## 2. Fundamentos sobre javascript
+
+## Variáveis
+
+Em JavaScript, podemos declarar variáveis usando `var`, `let` e `const`.  
+- `var`: Antigo e não recomendado, pois pode causar problemas de escopo.  
+- `let`: Permite reatribuição e tem escopo de bloco.  
+- `const`: Não pode ser reatribuído e também tem escopo de bloco.  
+
+Exemplo de uso:
+```js
+let nome = "Marcos"; 
+const idade = 25; 
+var cidade = "Rio de Janeiro";  
+
+console.log(nome, idade, cidade);
+```
+
+Tipos de Dados
+JavaScript possui diferentes tipos de dados primitivos e estruturais.
+Os principais são:
+
+- String: Texto entre aspas ("Hello")
+- Number: Números inteiros ou decimais (42, 3.14)
+- Boolean: Verdadeiro ou falso (true, false)
+- Array: Lista de valores ([1, 2, 3])
+- Objeto: Conjunto de pares chave-valor ```JS({ nome: "Marcos", idade: 25 })```
+Exemplo de como verificar o tipo de cada dado:
+
+```JS
+let texto = "Hello"; 
+let numero = 42; 
+let booleano = true; 
+let array = [1, 2, 3]; 
+let objeto = { nome: "Marcos", idade: 25 };  
+
+console.log(typeof texto, typeof numero, typeof booleano, typeof array, typeof objeto);
+```
+
+Operadores
+Os operadores em JavaScript permitem manipular valores.
+Alguns dos mais usados são:
+
+- Aritméticos: Soma (+), subtração (-), multiplicação (*), divisão (/), módulo (% - resto da divisão)
+- Lógicos: && (E), || (OU), ! (NÃO)
+
+Exemplo de operadores em ação:
+```JS
+let a = 10; 
+let b = 5;  
+
+console.log(a + b); // Soma
+console.log(a - b); // Subtração
+console.log(a * b); // Multiplicação
+console.log(a / b); // Divisão
+console.log(a % b); // Resto da divisão
+console.log(a > b && b < 10); // Operador lógico
+```
+
+Estruturas Condicionais
+As estruturas condicionais permitem que o código tome decisões com base em certas condições.
+Duas das mais comuns são if/else e switch.
+
+- `if/else`: Verifica uma condição e executa diferentes blocos de código.
+- `switch`: Alternativa ao if, útil quando há muitas condições possíveis.
+Exemplo:
+
+```js
+let idade = 18;  
+
+if (idade >= 18) {     
+    console.log("Maior de idade"); 
+} else {     
+    console.log("Menor de idade"); 
+}  
+
+let cor = "vermelho";  
+
+switch (cor) {     
+    case "azul":         
+        console.log("A cor é azul");         
+        break;     
+    case "vermelho":         
+        console.log("A cor é vermelha");         
+        break;     
+    default:         
+        console.log("Cor desconhecida"); 
+}
+```
+
+Laços de Repetição
+Os laços `(for, while)` permitem repetir um bloco de código várias vezes.
+
+`For`: Útil quando sabemos o número exato de repetições.
+`While`: Continua executando enquanto uma condição for verdadeira.
+
+Exemplo:
+```js
+// For
+for (let i = 0; i < 5; i++) {     
+    console.log("Número:", i); 
+}  
+
+// While
+let contador = 0; 
+while (contador < 5) {     
+    console.log("Contando...", contador);     
+    contador++; 
+}
+```
+
+3. Funções e Manipulação do DOM
+`Funções` Funções são blocos de código reutilizáveis. Elas podem receber parâmetros e retornar valores.
+
+Exemplo:
+
+```js
+function saudacao(nome) {     
+    return "Olá, " + nome + "!"; 
+}  
+
+console.log(saudacao("Marcos"));
+```
+
+Manipulação do DOM
+- O DOM (Document Object Model) permite acessar e modificar elementos HTML usando JavaScript.
+No exemplo abaixo, um botão altera o texto de um parágrafo quando clicado.
+
+HTML:
+```html
+<button onclick="mudarTexto()">Clique Aqui</button> 
+<p id="mensagem">Texto original</p>  
+
+<script>     
+    function mudarTexto() {         
+        document.getElementById("mensagem").innerText = "Texto alterado!";     
+    } 
+</script>
+```
+
+## 4. Arrays e Objetos
+Manipulando Arrays
+- Arrays armazenam listas de valores e possuem métodos úteis, como `push()` e `map()`.
+
+Exemplo:
+
+```js
+let frutas = ["Maçã", "Banana", "Laranja"]; 
+frutas.push("Uva"); // Adiciona no final
+console.log(frutas);  
+
+let novaLista = frutas.map(fruta => fruta.toUpperCase()); 
+console.log(novaLista);
+```
+
+Objetos e JSON
+- Objetos armazenam dados no formato chave-valor.
+- JSON (JavaScript Object Notation) é um formato leve para troca de dados.
+
+Exemplo:
+
+```js
+let pessoa = { nome: "Carlos", idade: 30, cidade: "SP" }; 
+console.log(pessoa.nome);  
+
+let json = JSON.stringify(pessoa); // Converte objeto para JSON
+console.log(json);  
+
+let objeto = JSON.parse(json); // Converte JSON para objeto
+console.log(objeto);
+```
+
+## 5. Assíncrono e APIs
+Fetch API para Buscar Dados
+- O `fetch()` é usado para fazer requisições HTTP e obter dados de APIs.
+
+Exemplo:
+
+```js
+fetch("https://jsonplaceholder.typicode.com/users")     
+    .then(response => response.json())     
+    .then(data => console.log(data))     
+    .catch(error => console.error("Erro na API:", error));
+```
+
+`Async/Await`
+`async/await` torna o código assíncrono mais fácil de entender e usar.
+
+Exemplo:
+```js
+async function buscarDados() {     
+    try {         
+        let resposta = await fetch("https://jsonplaceholder.typicode.com/users");         
+        let dados = await resposta.json();         
+        console.log(dados);     
+    } catch (erro) {         
+        console.error("Erro na API:", erro);     
+    } 
+} 
+
+buscarDados();
+```
+
+## 3. Mais sobre variaveis
+Variáveis
+- 1. `var` (EVITE USAR!)
+O `var` era a forma tradicional de declarar variáveis antes do ES6. No entanto, ele tem alguns problemas que podem causar bugs no código.
+
+- Escopo: Tem escopo de função, ou seja, se for declarado dentro de uma função, só pode ser acessado dentro dela.
+- Reatribuição: Pode ser reatribuído e atualizado.
+- Hoisting: Ele é "elevado" para o topo do escopo, mas sem valor inicial.
+📌 Exemplo com `var`:
+
+```JS
+function exemploVar() {
+    var nome = "Marcos";
+    if (true) {
+        var nome = "João"; // Sobrescreve a variável, pois var ignora o bloco de código
+        console.log(nome); // João
+    }
+    console.log(nome); // João (isso pode ser um problema!)
+}
+
+exemploVar();
+```
+
+## 2. let (O MAIS RECOMENDADO PARA VARIÁVEIS MUTÁVEIS)
+O let foi introduzido no ES6 e resolve muitos problemas do var.
+
+- Escopo: Tem escopo de bloco, ou seja, só existe dentro do `{}` onde foi declarado.
+- Reatribuição: Pode ser atualizado, mas não redeclarado no mesmo escopo.
+- Hoisting: É elevado, mas não pode ser usado antes da declaração.
+Exemplo com let:
+
+```js
+function exemploLet() {
+    let idade = 30;
+    if (true) {
+        let idade = 25; // Essa variável só existe dentro do if
+        console.log(idade); // 25
+    }
+    console.log(idade); // 30 (aqui, o valor original é mantido)
+}
+
+exemploLet();
+```
+
+## 3. const (USE PARA VALORES QUE NÃO MUDAM)
+O const também foi introduzido no ES6 e é usado para valores imutáveis (não podem ser reatribuídos).
+
+- Escopo: Também tem escopo de bloco.
+- Reatribuição: ❌ Não pode ser atualizado!
+- Hoisting: É elevado, mas não pode ser acessado antes da declaração.
+📌 Exemplo com const:
+
+```js
+const PI = 3.14;
+PI = 3.1416; // ❌ Isso dará erro! Não é possível alterar um `const`
+```
+
+Mas se `const` for um `objeto` ou `array`, os elementos internos podem ser modificados:
+
+```js
+const pessoa = { nome: "Carlos", idade: 28 };
+pessoa.idade = 29; // ✅ Isso pode
+console.log(pessoa); // { nome: "Carlos", idade: 29 }
+
+const numeros = [1, 2, 3];
+numeros.push(4); // ✅ Isso pode
+console.log(numeros); // [1, 2, 3, 4]
+```
+O que não pode mudar é a referência na memória, mas os valores dentro do objeto ou `array` podem ser alterados.
+
+## 4.  O que é o this em JavaScript?
+O this é uma palavra-chave em JavaScript que faz referência ao objeto atual em que o código está sendo executado. O valor de this pode variar dependendo de como a função é chamada.
+
+Exemplos:
+```js
+// Exemplo 1: Em um objeto
+const pessoa = {
+  nome: "Marcos",
+  idade: 25,
+  saudacao: function() {
+    console.log("Olá, " + this.nome); // "this" se refere ao objeto "pessoa"
+  }
+};
+
+pessoa.saudacao(); // Saída: "Olá, Marcos"
+
+// Exemplo 2: Em uma função global
+function mostrar() {
+  console.log(this); // Em uma função global, "this" se refere ao objeto global (window no navegador)
+}
+
+mostrar(); // Exibe o objeto global (window no navegador)
+```
+
+## 5. Funções de Callback
+Uma função de callback é uma função que é passada como argumento para outra função e é executada quando a operação da função externa é concluída.
+
+Exemplo:
+
+```js
+
+function saudacao(nome, callback) {
+  console.log("Olá, " + nome);
+  callback();
+}
+
+function despedida() {
+  console.log("Até logo!");
+}
+
+saudacao("Marcos", despedida);
+// Saída:
+// Olá, Marcos
+// Até logo!
+```
+
+## 6. Funções Anônimas e Arrow Functions
+As funções anônimas são funções sem nome, enquanto as arrow functions (funções de seta) são uma forma mais curta de escrever funções, com comportamento próprio para o this.
+
+Exemplo de função anônima:
+
+```js
+setTimeout(function() {
+  console.log("Este é um exemplo de função anônima!");
+}, 1000);
+```
+
+Exemplo de arrow function:
+```js
+const soma = (a, b) => a + b;
+
+console.log(soma(5, 3)); // Saída: 8
+```
+
+## 4. Métodos setTimeout e setInterval
+- setTimeout: Executa uma função uma vez após um tempo especificado.
+- setInterval: Executa uma função repetidamente após um intervalo de tempo especificado.
+Exemplo de setTimeout
+
+```js
+console.log("Início");
+
+setTimeout(function() {
+  console.log("Executado depois de 2 segundos");
+}, 2000);
+
+console.log("Fim");
+// Saída:
+// Início
+// Fim
+// Executado depois de 2 segundos
+```
+
+Exemplo de setInterval:
+
+```js
+let contador = 0;
+
+const intervalo = setInterval(function() {
+  contador++;
+  console.log(contador);
+
+  if (contador >= 5) {
+    clearInterval(intervalo); // Para a execução após 5 iterações
+  }
+}, 1000);
+// Saída:
+// 1
+// 2
+// 3
+// 4
+// 5
+```
+
+## 5. Promessas (Promises) e then/catch
+Promessas são usadas para lidar com operações assíncronas. A função de then é chamada quando a promessa é resolvida, e a função de catch é chamada quando ocorre um erro.
+
+Exemplo:
+
+```js
+let promessa = new Promise(function(resolve, reject) {
+  let sucesso = true; // Simulando sucesso ou erro
+
+  if (sucesso) {
+    resolve("Operação realizada com sucesso!");
+  } else {
+    reject("Ocorreu um erro.");
+  }
+});
+
+promessa
+  .then(function(result) {
+    console.log(result); // Saída: "Operação realizada com sucesso!"
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+## 6. Arrow Functions e o this
+As arrow functions têm um comportamento especial com o this. O this dentro de uma arrow function se refere ao valor de this do contexto onde a função foi criada, e não ao contexto de execução.
+
+Exemplo:
+
+```js
+const pessoa = {
+  nome: "Marcos",
+  idade: 25,
+  saudacao: function() {
+    setTimeout(() => {
+      console.log(`Olá, meu nome é ${this.nome}`); // "this" se refere ao objeto "pessoa"
+    }, 1000);
+  }
+};
+
+pessoa.saudacao(); // Saída após 1 segundo: "Olá, meu nome é Marcos"
+```

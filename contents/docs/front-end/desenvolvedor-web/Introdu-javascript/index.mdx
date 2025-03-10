@@ -1,0 +1,179 @@
+---
+title: "Introdução ao JavaScript"
+description: "JavaScript"
+---
+
+# 1. O que é JavaScript?
+
+JavaScript (JS) é uma linguagem de programação criada para tornar as páginas da web interativas. Ele é uma das três principais tecnologias da web, junto com HTML e CSS.
+
+✅ Com JavaScript, podemos:
+
+Criar animações e efeitos visuais.
+Manipular o conteúdo da página sem precisar recarregá-la.
+Fazer requisições a servidores para buscar ou enviar dados (AJAX, Fetch, APIs).
+Criar jogos, aplicativos web e até aplicativos mobile com frameworks como React Native.
+Hoje em dia, o JavaScript vai muito além do navegador! Ele pode ser usado no back-end (Node.js), em bancos de dados (MongoDB), inteligência artificial, IoT (Internet das Coisas) e muito mais.
+
+##Quem criou o JavaScript?
+
+O JavaScript foi criado por Brendan Eich, um programador da empresa Netscape, em 1995.
+
+Na época, a Netscape queria adicionar uma linguagem de scripts ao seu navegador, o Netscape Navigator. A ideia era que os desenvolvedores pudessem criar interações dinâmicas em páginas da web.
+
+Brendan Eich criou o JavaScript em apenas 10 dias! 😲 Isso porque a Netscape estava competindo com a Microsoft, que tinha o Internet Explorer, e precisava lançar rapidamente uma tecnologia inovadora.
+
+----
+## A origem do nome "JavaScript"
+Muita gente pensa que JavaScript tem relação com a linguagem Java, mas isso não é verdade!
+
+📌 Curiosidade: O JavaScript foi inicialmente chamado de Mocha, depois LiveScript, mas a Netscape fez uma parceria com a Sun Microsystems (criadora do Java) e mudou o nome para JavaScript por motivos de marketing.
+
+Apesar do nome parecido, Java e JavaScript são linguagens diferentes!
+## A Evolução do JavaScript
+
+Desde sua criação, o JavaScript passou por muitas melhorias. Ele se tornou um padrão chamado **ECMAScript (ES)**, que recebe atualizações regulares.
+
+Aqui estão as versões mais importantes do ECMAScript:
+
+| Ano   | Versão                 | O que mudou? |
+|-------|-------------------------|--------------|
+| 1997  | **ES1**                 | Primeira versão oficial do ECMAScript. |
+| 1999  | **ES3**                 | Introduziu suporte a expressões regulares e `try/catch`. |
+| 2009  | **ES5**                 | Adicionou `JSON`, `strict mode`, e novos métodos de array. |
+| 2015  | **ES6 (ECMAScript 2015)** | Maior atualização! Introduziu `let`, `const`, arrow functions, classes e Promises. |
+| 2016+ | **ES7, ES8, ES9...**     | Novos recursos como `async/await`, spread/rest operators, e melhorias na linguagem. |
+
+Hoje, o JavaScript é usado em **qualquer lugar**, desde páginas da web até servidores e aplicativos móveis.
+
+----
+
+## O que é ECMAScript (ES)?
+ECMAScript é o padrão que define a linguagem JavaScript. Ele é criado e mantido pela organização ECMA International através da especificação ECMA-262.
+
+Ou seja, JavaScript é uma implementação do ECMAScript.
+
+📌 Pense assim:
+
+ECMAScript é a base da linguagem.
+JavaScript adiciona funcionalidades extras, como manipulação do DOM e APIs do navegador.
+
+🔹 O que é ES6?
+O ES6 (ECMAScript 2015) é a 6ª versão do ECMAScript, lançada em 2015. Ele trouxe várias melhorias e novos recursos para o JavaScript.
+
+Antes do ES6, o JavaScript era bem limitado. Com o ES6, ele ficou mais moderno e poderoso.
+
+🆕 Principais recursos do ES6 com exemplos
+Aqui estão alguns dos recursos mais importantes que vieram no ES6:
+
+1. Declaração de Variáveis (let e const)
+Antes do ES6, só existia var. Agora temos let e const, que são mais seguras.
+```JS
+// Antes do ES6 (com var)
+var nome = "João";
+console.log(nome);
+
+// Com ES6 (melhor prática)
+let idade = 25;
+const PI = 3.14;
+console.log(idade, PI);
+```
+
+2. Arrow Functions (Funções de seta)
+As arrow functions tornam o código mais curto e legível.
+
+```JS
+// Antes do ES6
+function somar(a, b) {
+    return a + b;
+}
+console.log(somar(3, 4)); // 7
+
+// Com ES6 (Arrow Function)
+const somarES6 = (a, b) => a + b;
+console.log(somarES6(3, 4)); // 7
+```
+## 3. Template Literals (Interpolação de Strings)
+
+```js
+const nome = "Carlos";
+const idade = 30;
+
+// Antes do ES6
+console.log("Meu nome é " + nome + " e tenho " + idade + " anos.");
+
+// Com ES6
+console.log(`Meu nome é ${nome} e tenho ${idade} anos.`);
+```
+## 4. Destructuring (Desestruturação de Objetos e Arrays)
+Facilita o acesso a dados dentro de objetos e arrays.
+
+```js
+// Antes do ES6
+const pessoa = { nome: "Ana", idade: 22 };
+const nomePessoa = pessoa.nome;
+const idadePessoa = pessoa.idade;
+console.log(nomePessoa, idadePessoa);
+
+// Com ES6 (Destructuring)
+const { nome, idade } = pessoa;
+console.log(nome, idade);
+```
+
+## 5. Spread Operator (...)
+O spread operator (...) permite espalhar elementos de um array ou objeto.
+
+```js
+const numeros = [1, 2, 3];
+const novosNumeros = [...numeros, 4, 5]; // Copia e adiciona novos elementos
+console.log(novosNumeros); // [1, 2, 3, 4, 5]
+```
+
+## 6. Default Parameters (Parâmetros Padrão)
+Permite definir valores padrões para funções.
+
+```js
+// Antes do ES6
+function saudacao(nome) {
+    nome = nome || "Visitante";
+    return `Olá, ${nome}!`;
+}
+console.log(saudacao()); // "Olá, Visitante!"
+
+// Com ES6
+const saudacaoES6 = (nome = "Visitante") => `Olá, ${nome}!`;
+console.log(saudacaoES6()); // "Olá, Visitante!"
+```
+
+## 7. Promises (Trabalhando com operações assíncronas)
+O ES6 trouxe Promises, que são muito usadas para lidar com operações assíncronas, como requisições para APIs.
+```js
+const promessa = new Promise((resolve, reject) => {
+    let sucesso = true;
+    setTimeout(() => {
+        if (sucesso) {
+            resolve("Dados carregados!");
+        } else {
+            reject("Erro ao carregar os dados.");
+        }
+    }, 2000);
+});
+
+promessa
+    .then((res) => console.log(res)) // "Dados carregados!"
+    .catch((erro) => console.log(erro));
+```
+
+# Resumo: Qual a diferença?
+
+| Termo        | O que significa? |
+|-------------|-----------------|
+| **ECMAScript** | O padrão da linguagem JavaScript. Define regras e funcionalidades. |
+| **JavaScript** | Uma implementação do ECMAScript. Adiciona suporte ao DOM e APIs do navegador. |
+| **ES6 (ECMAScript 2015)** | A 6ª versão do ECMAScript, lançada em 2015, que trouxe melhorias significativas para o JavaScript. |
+
+## 📌 Conclusão
+- **ECMAScript** é o padrão da linguagem.  
+- **JavaScript** é uma linguagem baseada no ECMAScript.  
+- **ES6** trouxe melhorias que tornaram o JavaScript mais moderno e poderoso.  
+
