@@ -165,6 +165,32 @@ promessa
     .catch((erro) => console.log(erro));
 ```
 
+##### Outro exemplo
+Exemplo simples usando fetch para buscar a cotação do dólar na API pública do
+Banco Central do Brasil e exibir no console:
+
+```js
+fetch('https://economia.awesomeapi.com.br/json/last/USD-BRL')
+  .then(response => response.json())
+  .then(data => console.log(`Cotação do Dólar: R$ ${data.USDBRL.bid}`))
+  .catch(error => console.error('Erro ao buscar cotação:', error));
+```
+
+##### Exemplo mais complexo
+```js
+const valorEmReais = 100; // Defina o valor em reais aqui
+
+fetch('https://economia.awesomeapi.com.br/json/last/USD-BRL')
+  .then(response => response.json())
+  .then(data => {
+    const cotacao = parseFloat(data.USDBRL.bid);
+    const valorEmDolar = (valorEmReais / cotacao).toFixed(2);
+    console.log(`R$ ${valorEmReais} equivale a $ ${valorEmDolar} dólares.`);
+  })
+  .catch(error => console.error('Erro ao buscar cotação:', error));
+```
+
+
 #### 8. Escopo
 - Variáveis e funções definidas dentro de um bloco `{}`, não são visíveis fora dele.
 ```js
