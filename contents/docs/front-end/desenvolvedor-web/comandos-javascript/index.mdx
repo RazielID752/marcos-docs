@@ -1,9 +1,9 @@
 ---
-title: "JavaScript, comandos metodos e funções"
+title: "JavaScript, metodos, funções, Boleanos e condicionais"
 description: "JavaScript"
 ---
 ![Javascript](/assets/img/javascript.jpg)
-# 1. Primeiros comandos
+#### 1. Mais sobre javascript
 Executando no navegador (DevTools Console):
 - Abra o console do navegador ` (F12 → Console)`  e digite:
 
@@ -11,7 +11,7 @@ Executando no navegador (DevTools Console):
 console.log("Olá, mundo!");
 ```
 
-## 2. Incluindo JavaScript no HTML
+#### 2. Incluindo JavaScript no HTML
 - Crie um arquivo index.html e adicione:
 
 ```html
@@ -31,7 +31,7 @@ console.log("Olá, mundo!");
 </html>
 ```
 
-## 2. Fundamentos sobre javascript
+#### 2. Fundamentos sobre javascript
 
 ## Variáveis
 
@@ -171,7 +171,7 @@ HTML:
 </script>
 ```
 
-## 4. Arrays e Objetos
+#### 4. Arrays e Objetos
 Manipulando Arrays
 - Arrays armazenam listas de valores e possuem métodos úteis, como `push()` e `map()`.
 
@@ -203,7 +203,7 @@ let objeto = JSON.parse(json); // Converte JSON para objeto
 console.log(objeto);
 ```
 
-## 5. Assíncrono e APIs
+#### 5. Assíncrono e APIs
 Fetch API para Buscar Dados
 - O `fetch()` é usado para fazer requisições HTTP e obter dados de APIs.
 
@@ -234,7 +234,7 @@ async function buscarDados() {
 buscarDados();
 ```
 
-## 3. Mais sobre variaveis
+#### 3. Mais sobre variaveis
 Variáveis
 - 1. `var` (EVITE USAR!)
 O `var` era a forma tradicional de declarar variáveis antes do ES6. No entanto, ele tem alguns problemas que podem causar bugs no código.
@@ -257,7 +257,7 @@ function exemploVar() {
 exemploVar();
 ```
 
-## 2. let (O MAIS RECOMENDADO PARA VARIÁVEIS MUTÁVEIS)
+#### 2. let (O MAIS RECOMENDADO PARA VARIÁVEIS MUTÁVEIS)
 O let foi introduzido no ES6 e resolve muitos problemas do var.
 
 - Escopo: Tem escopo de bloco, ou seja, só existe dentro do `{}` onde foi declarado.
@@ -278,7 +278,7 @@ function exemploLet() {
 exemploLet();
 ```
 
-## 3. const (USE PARA VALORES QUE NÃO MUDAM)
+#### 3. const (USE PARA VALORES QUE NÃO MUDAM)
 O const também foi introduzido no ES6 e é usado para valores imutáveis (não podem ser reatribuídos).
 
 - Escopo: Também tem escopo de bloco.
@@ -304,7 +304,7 @@ console.log(numeros); // [1, 2, 3, 4]
 ```
 O que não pode mudar é a referência na memória, mas os valores dentro do objeto ou `array` podem ser alterados.
 
-## 4.  O que é o this em JavaScript?
+#### 4.  O que é o this em JavaScript?
 O this é uma palavra-chave em JavaScript que faz referência ao objeto atual em que o código está sendo executado. O valor de this pode variar dependendo de como a função é chamada.
 
 Exemplos:
@@ -328,7 +328,7 @@ function mostrar() {
 mostrar(); // Exibe o objeto global (window no navegador)
 ```
 
-## 5. Funções de Callback
+#### 5. Funções de Callback
 Uma função de callback é uma função que é passada como argumento para outra função e é executada quando a operação da função externa é concluída.
 
 Exemplo:
@@ -350,7 +350,7 @@ saudacao("Marcos", despedida);
 // Até logo!
 ```
 
-## 6. Funções Anônimas e Arrow Functions
+#### 6. Funções Anônimas e Arrow Functions
 As funções anônimas são funções sem nome, enquanto as arrow functions (funções de seta) são uma forma mais curta de escrever funções, com comportamento próprio para o this.
 
 Exemplo de função anônima:
@@ -368,7 +368,7 @@ const soma = (a, b) => a + b;
 console.log(soma(5, 3)); // Saída: 8
 ```
 
-## 4. Métodos setTimeout e setInterval
+#### 4. Métodos setTimeout e setInterval
 - setTimeout: Executa uma função uma vez após um tempo especificado.
 - setInterval: Executa uma função repetidamente após um intervalo de tempo especificado.
 Exemplo de setTimeout
@@ -408,7 +408,7 @@ const intervalo = setInterval(function() {
 // 5
 ```
 
-## 5. Promessas (Promises) e then/catch
+#### 5. Promessas (Promises) e then/catch
 Promessas são usadas para lidar com operações assíncronas. A função de then é chamada quando a promessa é resolvida, e a função de catch é chamada quando ocorre um erro.
 
 Exemplo:
@@ -433,7 +433,7 @@ promessa
   });
 ```
 
-## 6. Arrow Functions e o this
+#### 6. Arrow Functions e o this
 As arrow functions têm um comportamento especial com o this. O this dentro de uma arrow function se refere ao valor de this do contexto onde a função foi criada, e não ao contexto de execução.
 
 Exemplo:
@@ -451,3 +451,176 @@ const pessoa = {
 
 pessoa.saudacao(); // Saída após 1 segundo: "Olá, meu nome é Marcos"
 ```
+#### Boolean
+Existem dois valores booleanos false ou true.
+```js
+var possuiGraduacao = true;
+var possuiDoutorado = false;
+```
+
+#### 7. Condicionais If e Else
+Verificar se uma expressão é verdadeira com if, caso contrário o else será ativado.
+```js
+var possuiGraduacao = true;
+
+if(possuiGraduacao) {
+  console.log('Possui graduação');
+} else {
+  console.log('Não possui graduação');
+}
+// retorna Possui Graduação e não executa o else
+```
+>O valor dentro dos parênteses sempre será avaliado em false ou true.
+
+### 8. Switch
+O switch verifica se uma variável é igual a diferentes valores e executa um case correspondente.
+Caso ela seja igual, você pode fazer alguma coisa e utilizar a palavra chave break;
+Lembrando que o valor do default ocorrera caso nehuma das anteriores seja verdadeira.
+
+```js
+var corFavorita = "Azul";
+
+switch (corFavorita) {
+  case "Azul":
+    console.log("Olhe para o céu.");
+    break;
+  case "Vermelho":
+    console.log("Olhe para rosas.");
+    break;
+  case "Amarelo":
+    console.log("Olhe para o sol.");
+    break;
+  default:
+    console.log("Feche os olhos");
+}
+// Saída: "Olhe para o céu."
+```
+
+#### 9. Truthy e Falsy
+Alguns valores são avaliados como true (truthy) ou false (falsy) quando usados em expressões booleanas.
+
+Falsy (valores que retornam false)
+
+```js
+if (false) if (0) if (-0) if (NaN) if (null) if (undefined) if ('') 
+```
+Truthy (valores que retornam true)
+```js
+if (true) if (1) if (' ') if ('andre') if (-5) if ({}) 
+```
+
+#### Relembrando Operadores: Operador Lógico de Negação ! N
+```JS
+console.log(!true); // false
+console.log(!1); // false
+console.log(!''); // true
+console.log(!undefined); // true
+console.log(!!' '); // true
+console.log(!!''); // false
+```
+>A dica é usar !! para verificar se um valor é truthy ou falsy.
+
+#### Operadores de Comparação
+Sempre retornam um valor booleano (true ou false).
+```JS
+console.log(10 > 5); // true
+console.log(5 > 10); // false
+console.log(20 < 10); // false
+console.log(10 <= 10); // true
+console.log(10 >= 11); // false
+```
+####  10. Comparação Estrita (===) vs Não Estrita (==)
+O == compara valores sem considerar o tipo, enquanto === compara valores e tipos.
+
+```JS
+console.log(10 == "10"); // true
+console.log(10 === "10"); // false
+console.log(10 !== "10"); // true
+```
+
+#### 11. Mais Operadores Lógicos && e ||
+Operador && (E lógico)
+- Retorna o primeiro valor false encontrado. Se todos forem true, retorna o último.
+
+```JS
+console.log(true && true); // true
+console.log(true && false); // false
+console.log('Gato' && 'Cão'); // 'Cão'
+console.log((5 - 5) && (5 + 5)); // 0
+console.log('Gato' && false); // false
+console.log((5 >= 5) && (3 < 6)); // true
+```
+
+#### 12. Operador || (OU lógico)
+- Retorna o primeiro valor true encontrado.
+```JS
+console.log(true || true); // true
+console.log(true || false); // true
+console.log('Gato' || 'Cão'); // 'Gato'
+console.log((5 - 5) || (5 + 5)); // 10
+console.log('Gato' || false); // 'Gato'
+console.log((5 >= 5) || (3 < 6)); // true
+```
+
+## Exercícios:
+
+1. Verifique se sua idade é maior do que a de um parente
+Dependendo do resultado, exiba no console 'É maior', 'É igual' ou 'É menor'.
+```JS
+var minhaIdade = 25;
+var idadeParente = 30;
+
+if (minhaIdade > idadeParente) {
+  console.log("É maior");
+} else if (minhaIdade === idadeParente) {
+  console.log("É igual");
+} else {
+  console.log("É menor");
+}
+```
+
+2. Qual valor é retornado na seguinte expressão?
+
+```js
+var expressao = (5 - 2) && (5 - ' ') && (5 - 2);
+console.log(expressao);
+```
+>Resposta: 3 (o último valor truthy).
+
+3. Verifique se as seguintes variáveis são Truthy ou Falsy
+
+```js
+var nome = 'Andre'; // Truthy
+var idade = 28; // Truthy
+var possuiDoutorado = false; // Falsy
+var empregoFuturo; // Falsy (undefined)
+var dinheiroNaConta = 0; // Falsy
+```
+4. Compare o total de habitantes do Brasil com a China (em milhões)
+```js
+var brasil = 207;
+var china = 1340;
+
+console.log(brasil > china ? "Brasil tem mais habitantes" : "China tem mais habitantes");
+```
+5. O que será exibido no console?
+
+```js
+if (('Gato' === 'gato') && (5 > 2)) {
+  console.log('Verdadeiro');
+} else {
+  console.log('Falso');
+}
+```
+>Resposta: 'Falso', pois 'Gato' === 'gato' retorna false.
+
+6. O que será exibido no console?
+
+```js
+if (('Gato' === 'gato') || (5 > 2)) {
+  console.log('Gato' && 'Cão');
+} else {
+  console.log('Falso');
+}
+```
+>Resposta: 'Cão', pois 5 > 2 é true, e 'Gato' && 'Cão' retorna 'Cão'.

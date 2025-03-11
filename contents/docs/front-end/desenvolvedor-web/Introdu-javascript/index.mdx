@@ -3,7 +3,7 @@ title: "Introdução ao JavaScript"
 description: "JavaScript"
 ---
 ![Javascript](/assets/img/javascript.jpg)
-# 1. O que é JavaScript?
+# O que é JavaScript?
 
 JavaScript (JS) é uma linguagem de programação criada para tornar as páginas da web interativas. Ele é uma das três principais tecnologias da web, junto com HTML e CSS.
 
@@ -15,7 +15,7 @@ Fazer requisições a servidores para buscar ou enviar dados (AJAX, Fetch, APIs)
 Criar jogos, aplicativos web e até aplicativos mobile com frameworks como React Native.
 Hoje em dia, o JavaScript vai muito além do navegador! Ele pode ser usado no back-end (Node.js), em bancos de dados (MongoDB), inteligência artificial, IoT (Internet das Coisas) e muito mais.
 
-## Quem criou o JavaScript?
+### Quem criou o JavaScript?
 
 O JavaScript foi criado por Brendan Eich, um programador da empresa Netscape, em 1995.
 
@@ -24,13 +24,13 @@ Na época, a Netscape queria adicionar uma linguagem de scripts ao seu navegador
 Brendan Eich criou o JavaScript em apenas 10 dias! 😲 Isso porque a Netscape estava competindo com a Microsoft, que tinha o Internet Explorer, e precisava lançar rapidamente uma tecnologia inovadora.
 
 ----
-## A origem do nome "JavaScript"
+### A origem do nome "JavaScript"
 Muita gente pensa que JavaScript tem relação com a linguagem Java, mas isso não é verdade!
 
 📌 Curiosidade: O JavaScript foi inicialmente chamado de Mocha, depois LiveScript, mas a Netscape fez uma parceria com a Sun Microsystems (criadora do Java) e mudou o nome para JavaScript por motivos de marketing.
 
 Apesar do nome parecido, Java e JavaScript são linguagens diferentes!
-## A Evolução do JavaScript
+### A Evolução do JavaScript
 
 Desde sua criação, o JavaScript passou por muitas melhorias. Ele se tornou um padrão chamado **ECMAScript (ES)**, que recebe atualizações regulares.
 
@@ -48,7 +48,7 @@ Hoje, o JavaScript é usado em **qualquer lugar**, desde páginas da web até se
 
 ----
 
-## O que é ECMAScript (ES)?
+### O que é ECMAScript (ES)?
 ![EcmanScript](/assets/img/ecman-script.png)
 ECMAScript é o padrão que define a linguagem JavaScript. Ele é criado e mantido pela organização ECMA International através da especificação ECMA-262.
 
@@ -80,7 +80,7 @@ const PI = 3.14;
 console.log(idade, PI);
 ```
 
-2. Arrow Functions (Funções de seta)
+#### 2. Arrow Functions (Funções de seta) `=>`
 As arrow functions tornam o código mais curto e legível.
 
 ```JS
@@ -94,7 +94,7 @@ console.log(somar(3, 4)); // 7
 const somarES6 = (a, b) => a + b;
 console.log(somarES6(3, 4)); // 7
 ```
-## 3. Template Literals (Interpolação de Strings)
+#### 3. Template Literals (Interpolação de Strings)
 
 ```js
 const nome = "Carlos";
@@ -106,7 +106,7 @@ console.log("Meu nome é " + nome + " e tenho " + idade + " anos.");
 // Com ES6
 console.log(`Meu nome é ${nome} e tenho ${idade} anos.`);
 ```
-## 4. Destructuring (Desestruturação de Objetos e Arrays)
+#### 4. Destructuring (Desestruturação de Objetos e Arrays)
 Facilita o acesso a dados dentro de objetos e arrays.
 
 ```js
@@ -121,8 +121,8 @@ const { nome, idade } = pessoa;
 console.log(nome, idade);
 ```
 
-## 5. Spread Operator (...)
-O spread operator (...) permite espalhar elementos de um array ou objeto.
+#### 5. Spread Operator (...)
+O spread operator `(...)` permite espalhar elementos de um array ou objeto.
 
 ```js
 const numeros = [1, 2, 3];
@@ -130,7 +130,7 @@ const novosNumeros = [...numeros, 4, 5]; // Copia e adiciona novos elementos
 console.log(novosNumeros); // [1, 2, 3, 4, 5]
 ```
 
-## 6. Default Parameters (Parâmetros Padrão)
+#### 6. Default Parameters (Parâmetros Padrão)
 Permite definir valores padrões para funções.
 
 ```js
@@ -146,7 +146,7 @@ const saudacaoES6 = (nome = "Visitante") => `Olá, ${nome}!`;
 console.log(saudacaoES6()); // "Olá, Visitante!"
 ```
 
-## 7. Promises (Trabalhando com operações assíncronas)
+#### 7. Promises (Trabalhando com operações assíncronas)
 O ES6 trouxe Promises, que são muito usadas para lidar com operações assíncronas, como requisições para APIs.
 ```js
 const promessa = new Promise((resolve, reject) => {
@@ -163,6 +163,144 @@ const promessa = new Promise((resolve, reject) => {
 promessa
     .then((res) => console.log(res)) // "Dados carregados!"
     .catch((erro) => console.log(erro));
+```
+
+#### 8. Escopo
+- Variáveis e funções definidas dentro de um bloco `{}`, não são visíveis fora dele.
+```js
+function precisoVisitar(paisesVisitados) {
+  var totalPaises = 193;
+  return `Ainda faltam ${totalPaises - paisesVisitados} paises para visitar`
+}
+console.log(totalPaises); // erro, totalPaises não definido
+```
+#### 9. Escopo Léxico
+- Funções conseguem acessar variáveis que foram criadas no contexto pai
+```js
+var profissao = 'Designer';
+
+function dados() {
+  var nome = 'Marcos';
+  var idade = 27;
+  function outrosDados() {
+    var endereco = 'Rio de Janeiro';
+    var idade = 29;
+    return `${nome}, ${idade}, ${endereco}, ${profissao}`;
+  }
+  return outrosDados();
+}
+
+dados(); // Retorna 'Marcos, 29, Rio de Janeiro, Designer'
+outrosDados(); // retorna um erro
+```
+
+#### 10. Objetos
+- Conjunto de variáveis e funções, que são chamadas de propriedades e métodos.
+```js
+var pessoa = {
+  nome: 'Luiz',
+  idade: 32,
+  profissao: 'Designer',
+  possuiFaculdade: true,
+}
+
+pessoa.nome; // 'Luiz'
+pessoa.possuiFaculdade; // true
+```
+>Propriedades e métodos consistem em nome (chave) e valor
+
+#### 11. Métodos
+- São propriedades de um objeto que armazenam funções como valor. Elas permitem que o
+objeto execute ações e manipule seus próprios dados, tornando o código mais organizado e reutilizável.
+```js
+var quadrado = {
+  lados: 4,
+  area: function(lado) {
+    return lado * lado;
+  },
+  perimetro: function(lado) {
+    return this.lados * lado;
+  },
+}
+
+quadrado.lados; // 4
+quadrado.area(5); // 25
+quadrado.perimetro(5); // 20
+```
+No ES6+, a sintaxe para definir métodos em objetos foi simplificada. Antes, era comum usar a seguinte forma:
+Sintaxe antes do ES6:
+```js
+const objeto = {
+  area: function() {
+    return "Calculando área...";
+  }
+};
+```
+
+Sintaxe no ES6+ (método abreviado):
+```js
+const objeto = {
+  area() {
+    return "Calculando área...";
+  }
+};
+```
+>A principal diferença é que no ES6+ não é necessário usar function, tornando o código mais limpo e legível.
+
+#### 12. Organização do Código com Objetos
+Os objetos ajudam a organizar o código em pequenas partes reutilizáveis, tornando-o mais modular e fácil de manter.
+
+Exemplo com o objeto Math
+- O JavaScript possui objetos nativos, como Math, que fornecem métodos e propriedades úteis:
+```js
+console.log(Math.PI); // 3.141592653589793
+console.log(Math.random()); // Número aleatório entre 0 e 1
+
+var pi = Math.PI;
+console.log(pi); // 3.141592653589793
+```
+
+No exemplo acima, Math.PI é uma propriedade que retorna o valor de π, enquanto Math.random() é um método que gera um número aleatório.
+
+#### 13. Objetos e Métodos
+Já reparou que console também é um objeto e `log()` é um método dele?
+```js
+console.log("Olá, mundo!"); // Exibe "Olá, mundo!" no console
+```
+>Isso mostra como os objetos podem armazenar tanto propriedades quanto métodos, facilitando a reutilização e organização do código.
+
+#### 14. Criar um Objeto
+Um objeto é criado utilizando as chaves `{}`
+
+```js
+var carro = {};
+var pessoa = {};
+
+console.log(typeof carro); // 'object'
+```
+#### 15. Dot Notation Get
+Acesse propriedades de um objeto utilizando o ponto `.`
+```js
+var menu = {
+  width: 900,
+  height: 70,
+  backgroundColor: '#8f4E',
+}
+
+var bg = menu.backgroundColor; // '#8f4E'
+```
+
+#### 16. Dot Notation Set
+Substitua o valor de uma propriedade utilizando `.` e o `= `após o nome da mesma.
+```js
+var menu = {
+  width: 800,
+  height: 50,
+  backgroundColor: '#84E',
+}
+
+menu.backgroundColor = '#000';
+console.log(menu.backgroundColor); // '#000'
 ```
 
 # Resumo: Qual a diferença?
