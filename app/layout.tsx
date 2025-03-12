@@ -5,14 +5,14 @@ import { Inter } from "next/font/google";
 import { Footer } from "@/components/footer";
 import "@/styles/globals.css";
 
-const sansFont =  Inter({
+const sansFont = Inter({
   subsets: ["latin"],
   variable: "--font-geist-sans",
   display: "swap",
   weight: "400",
 });
 
-const monoFont =  Inter({
+const monoFont = Inter({
   subsets: ["latin"],
   variable: "--font-geist-mono",
   display: "swap",
@@ -21,7 +21,7 @@ const monoFont =  Inter({
 
 export const metadata: Metadata = {
   title: "Marcos N Docs - Template",
-  metadataBase: new URL("https://ariadocs.vercel.app/"),
+  metadataBase: new URL("https://doc.marcosuxdesign.com/"),
   description:
     "Bem-vindo à documentação de front-end! Aqui você encontrará diretrizes, boas práticas e recursos essenciais para o desenvolvimento de interfaces modernas e eficientes.",
 };
@@ -33,6 +33,41 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" suppressHydrationWarning>
+      <head>
+        <link
+          rel="apple-touch-icon"
+          href="/apple-icon?<generated>"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
+        <link
+          rel="icon"
+          href="/icon?<generated>"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
+        {/* Open Graph para WhatsApp e Facebook */}
+        <meta
+          property="og:image"
+          content="https://doc.marcosuxdesign.com/opengraph-image.png"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:url" content="https://doc.marcosuxdesign.com/" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Marcos N | Doc" />
+        <meta
+          name="twitter:description"
+          content="Boas práticas e recursos no Front-end"
+        />
+        <meta
+          name="twitter:image"
+          content="https://doc.marcosuxdesign.com/opengraph-image.png"
+        />
+      </head>
       <body
         className={`${sansFont.variable} ${monoFont.variable} font-regular antialiased tracking-wide`}
         suppressHydrationWarning
