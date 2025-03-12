@@ -11,14 +11,14 @@ export function Footer() {
             Criado Por{" "}
             <Link
               className="px-1 underline underline-offset-2"
-              href="https://github.com/nisabmohd"
+              href="https://www.linkedin.com/in/marcos-nathanael-b39936196/"
             >
               Marcos N
             </Link>
             | me siga no
             <Link
               className="px-1 underline underline-offset-2"
-              href="https://github.com/nisabmohd/Aria-Docs"
+              href="https://github.com/RazielID752/RazielID752"
             >
               GitHub
             </Link>

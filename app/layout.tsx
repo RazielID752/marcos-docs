@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   title: "Marcos N Docs - Template",
   metadataBase: new URL("https://ariadocs.vercel.app/"),
   description:
-    "This comprehensive documentation template, crafted with Next.js and available as open-source, delivers a sleek and responsive design, tailored to meet all your project documentation requirements.",
+    "Bem-vindo à documentação de front-end! Aqui você encontrará diretrizes, boas práticas e recursos essenciais para o desenvolvimento de interfaces modernas e eficientes.",
 };
 
 export default function RootLayout({

@@ -7,12 +7,12 @@ export default function NotFound() {
       <div className="text-center flex flex-col items-center justify-center w-fit gap-2">
         <h2 className="text-7xl font-bold pr-1">404</h2>
         <p className="text-muted-foreground text-md font-medium">
-          Page not found {":("}
+          Página não encontrada{":("}
         </p>
-        <p>Oops! The page you&apos;re looking for doesn&apos;t exist.</p>
+        <p>Oops! A página que você está procurando não existe.</p>
       </div>
       <Link href="/" className={buttonVariants({})}>
-        Back to homepage
+        Voltar para a página inicial
       </Link>
     </div>
   );

@@ -130,6 +130,49 @@ const novosNumeros = [...numeros, 4, 5]; // Copia e adiciona novos elementos
 console.log(novosNumeros); // [1, 2, 3, 4, 5]
 ```
 
+ Manipulação de Arrays e Objetos
+
+### ✅ Arrays e métodos principais
+
+- `map()`: Itera sobre um array e retorna um novo array modificado.
+- `filter()`: Filtra elementos de um array com base em uma condição.
+- `reduce()`: Reduz um array a um único valor, aplicando uma função acumuladora.
+- `forEach()`: Itera sobre um array, mas sem retornar um novo array.
+- `find()`: Retorna o primeiro elemento do array que satisfaz a condição.
+
+#### 📝 Exemplos
+```js
+const numeros = [1, 2, 3, 4, 5];
+
+const dobrados = numeros.map(num => num * 2);
+console.log(dobrados); // [2, 4, 6, 8, 10]
+
+const pares = numeros.filter(num => num % 2 === 0);
+console.log(pares); // [2, 4]
+
+const somaTotal = numeros.reduce((acc, num) => acc + num, 0);
+console.log(somaTotal); // 15
+
+numeros.forEach(num => console.log(num * 10)); // 10, 20, 30, 40, 50
+
+const encontrado = numeros.find(num => num > 3);
+console.log(encontrado); // 4
+```
+
+### ✅ Objetos e manipulação de propriedades
+
+```js
+const pessoa = {
+  nome: "Marcos",
+  idade: 30,
+  cidade: "Rio de Janeiro"
+};
+
+console.log(pessoa.nome); // Marcos
+pessoa.profissao = "Desenvolvedor";
+console.log(pessoa);
+```
+
 #### 6. Default Parameters (Parâmetros Padrão)
 Permite definir valores padrões para funções.
 
@@ -201,7 +244,13 @@ function precisoVisitar(paisesVisitados) {
 console.log(totalPaises); // erro, totalPaises não definido
 ```
 #### 9. Escopo Léxico
-- Funções conseguem acessar variáveis que foram criadas no contexto pai
+- Funções conseguem acessar variáveis que foram criadas no contexto pai.
+O Escopo Léxico em JavaScript significa que uma função pode acessar variáveis definidas dentro dela e também nas funções
+e blocos externos onde foi declarada.
+
+Ou seja, quando uma função é criada, ela "lembra" onde foi definida e consegue acessar variáveis 
+desse local, mesmo que seja chamada em outro contexto.
+
 ```js
 var profissao = 'Designer';
 

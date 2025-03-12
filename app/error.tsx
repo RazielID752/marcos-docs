@@ -22,9 +22,7 @@ export default function Error({
         <p className="text-muted-foreground text-md font-medium">
           Something went wrong {":`("}
         </p>
-        <p>
-          We&apos;re sorry, but an error occurred while processing your request.
-        </p>
+        <p>Lamentamos, mas ocorreu um erro ao processar sua solicitação.</p>
       </div>
       <div className="flex items-center gap-2">
         <Button
@@ -33,10 +31,10 @@ export default function Error({
             () => reset()
           }
         >
-          Reload page
+          Recarregar página
         </Button>
         <Link href="/" className={buttonVariants({})}>
-          Back to homepage
+          Voltar para a página inicial
         </Link>
       </div>
     </div>
