@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
-import { HeartIcon, MessageSquareMore, Coffee } from "lucide-react";
-import Image from "next/image";
+import { MessageSquareMore, Coffee } from "lucide-react";
 
 export function Footer() {
   return (
@@ -50,7 +49,6 @@ export function FooterButtons() {
         className={buttonVariants({ variant: "outline", size: "sm" })}
       >
         <Coffee className="h-4 w-4 mr-2 text-[#FFDD00] fill-current" />
-        {/* <HeartIcon className="h-4 w-4 mr-2 text-red-600 fill-current" /> */}
         Buy me a coffee
       </Link>
     </>

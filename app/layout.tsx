@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { ThemeProvider } from "@/components/contexts/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { Inter } from "next/font/google";
@@ -84,7 +85,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </ThemeProvider>
-        <script
+        <Script
           data-name="BMC-Widget"
           data-cfasync="false"
           src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
@@ -95,7 +96,8 @@ export default function RootLayout({
           data-position="Right"
           data-x_margin="18"
           data-y_margin="18"
-        ></script>
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );
