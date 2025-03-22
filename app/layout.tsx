@@ -84,6 +84,18 @@ export default function RootLayout({
           </main>
           <Footer />
         </ThemeProvider>
+        <script
+          data-name="BMC-Widget"
+          data-cfasync="false"
+          src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+          data-id="razielid752"
+          data-description="Support me on Buy me a coffee!"
+          data-message="Curtiu essa documentação? Considere apoiar o projeto! Sua contribuição me ajuda a mantê-la sempre disponível e atualizada. ☕💙"
+          data-color="#FFDD00"
+          data-position="Right"
+          data-x_margin="18"
+          data-y_margin="18"
+        ></script>
       </body>
     </html>
   );

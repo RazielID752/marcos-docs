@@ -2,7 +2,7 @@ import React from "react";
 
 const SobreMim: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-between bg-background text-foreground">
+    <div className="min-h-screen flex items-center justify-between  text-foreground">
       <div className="shadow-md rounded-lg bg-card text-card-foreground">
         <h1 className="text-3xl font-bold mb-6">Sobre mim</h1>
         <div className="flex flex-col">

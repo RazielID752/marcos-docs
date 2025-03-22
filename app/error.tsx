@@ -20,7 +20,7 @@ export default function Error({
       <div className="text-center flex flex-col items-center justify-center w-fit gap-2">
         <h2 className="text-7xl font-bold pr-1">Oops!</h2>
         <p className="text-muted-foreground text-md font-medium">
-          Something went wrong {":`("}
+          Algo deu errado {":`("}
         </p>
         <p>Lamentamos, mas ocorreu um erro ao processar sua solicitação.</p>
       </div>

@@ -64,10 +64,75 @@ O ES6 (ECMAScript 2015) é a 6ª versão do ECMAScript, lançada em 2015. Ele tr
 
 Antes do ES6, o JavaScript era bem limitado. Com o ES6, ele ficou mais moderno e poderoso.
 
-### Principais recursos do ES6 com exemplos
-Aqui estão alguns dos recursos mais importantes que vieram no ES6:
+#### 1. Console no javascript
+Executando no navegador (DevTools Console):
+- Abra o console do navegador ` (F12 → Console)`  e digite:
 
-1. Declaração de Variáveis (let e const)
+```JS
+console.log("Olá, mundo!");
+```
+
+#### 2. Incluindo JavaScript no HTML
+- Crie um arquivo index.html e adicione:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro JS</title>
+</head>
+<body>
+    <h1>Bem-vindo ao JavaScript!</h1>
+    <script>
+        alert("Olá, seja bem-vindo!");
+    </script>
+</body>
+</html>
+```
+
+
+#### 3. Fundamentos sobre javascript
+
+## Variáveis
+
+Em JavaScript, podemos declarar variáveis usando `var`, `let` e `const`.  
+- `var`: Antigo e não recomendado, pois pode causar problemas de escopo.  
+- `let`: Permite reatribuição e tem escopo de bloco.  
+- `const`: Não pode ser reatribuído e também tem escopo de bloco.  
+
+Exemplo de uso:
+```js
+let nome = "Marcos"; 
+const idade = 25; 
+var cidade = "Rio de Janeiro";  
+
+console.log(nome, idade, cidade);
+```
+
+Tipos de Dados
+JavaScript possui diferentes tipos de dados primitivos e estruturais.
+Os principais são:
+
+- String: Texto entre aspas ("Hello")
+- Number: Números inteiros ou decimais (42, 3.14)
+- Boolean: Verdadeiro ou falso (true, false)
+- Array: Lista de valores ([1, 2, 3])
+- Objeto: Conjunto de pares chave-valor ```JS({ nome: "Marcos", idade: 25 })```
+Exemplo de como verificar o tipo de cada dado:
+
+```JS
+let texto = "Hello"; 
+let numero = 42; 
+let booleano = true; 
+let array = [1, 2, 3]; 
+let objeto = { nome: "Marcos", idade: 25 };  
+
+console.log(typeof texto, typeof numero, typeof booleano, typeof array, typeof objeto);
+```
+
+#### 4. Declaração de Variáveis (let e const)
 Antes do ES6, só existia var. Agora temos let e const, que são mais seguras.
 ```JS
 // Antes do ES6 (com var)
@@ -80,7 +145,7 @@ const PI = 3.14;
 console.log(idade, PI);
 ```
 
-#### 2. Arrow Functions (Funções de seta) `=>`
+#### 5. Arrow Functions (Funções de seta) `=>`
 As arrow functions tornam o código mais curto e legível.
 
 ```JS
@@ -106,7 +171,7 @@ console.log("Meu nome é " + nome + " e tenho " + idade + " anos.");
 // Com ES6
 console.log(`Meu nome é ${nome} e tenho ${idade} anos.`);
 ```
-#### 4. Destructuring (Desestruturação de Objetos e Arrays)
+#### 6. Destructuring (Desestruturação de Objetos e Arrays)
 Facilita o acesso a dados dentro de objetos e arrays.
 
 ```js
@@ -121,7 +186,7 @@ const { nome, idade } = pessoa;
 console.log(nome, idade);
 ```
 
-#### 5. Spread Operator (...)
+#### 7. Spread Operator (...)
 O spread operator `(...)` permite espalhar elementos de um array ou objeto.
 
 ```js
@@ -173,7 +238,7 @@ pessoa.profissao = "Desenvolvedor";
 console.log(pessoa);
 ```
 
-#### 6. Default Parameters (Parâmetros Padrão)
+#### 8. Default Parameters (Parâmetros Padrão)
 Permite definir valores padrões para funções.
 
 ```js
@@ -189,7 +254,7 @@ const saudacaoES6 = (nome = "Visitante") => `Olá, ${nome}!`;
 console.log(saudacaoES6()); // "Olá, Visitante!"
 ```
 
-#### 7. Promises (Trabalhando com operações assíncronas)
+#### 9. Promises (Trabalhando com operações assíncronas)
 O ES6 trouxe Promises, que são muito usadas para lidar com operações assíncronas, como requisições para APIs.
 ```js
 const promessa = new Promise((resolve, reject) => {
@@ -234,7 +299,7 @@ fetch('https://economia.awesomeapi.com.br/json/last/USD-BRL')
 ```
 
 
-#### 8. Escopo
+#### 10. Escopo
 - Variáveis e funções definidas dentro de um bloco `{}`, não são visíveis fora dele.
 ```js
 function precisoVisitar(paisesVisitados) {
@@ -269,7 +334,7 @@ dados(); // Retorna 'Marcos, 29, Rio de Janeiro, Designer'
 outrosDados(); // retorna um erro
 ```
 
-#### 10. Objetos
+#### 11. Objetos
 - Conjunto de variáveis e funções, que são chamadas de propriedades e métodos.
 ```js
 var pessoa = {
@@ -284,7 +349,7 @@ pessoa.possuiFaculdade; // true
 ```
 >Propriedades e métodos consistem em nome (chave) e valor
 
-#### 11. Métodos
+#### 12. Métodos
 - São propriedades de um objeto que armazenam funções como valor. Elas permitem que o
 objeto execute ações e manipule seus próprios dados, tornando o código mais organizado e reutilizável.
 ```js
@@ -322,7 +387,7 @@ const objeto = {
 ```
 >A principal diferença é que no ES6+ não é necessário usar function, tornando o código mais limpo e legível.
 
-#### 12. Organização do Código com Objetos
+#### 13. Organização do Código com Objetos
 Os objetos ajudam a organizar o código em pequenas partes reutilizáveis, tornando-o mais modular e fácil de manter.
 
 Exemplo com o objeto Math
@@ -337,14 +402,14 @@ console.log(pi); // 3.141592653589793
 
 No exemplo acima, Math.PI é uma propriedade que retorna o valor de π, enquanto Math.random() é um método que gera um número aleatório.
 
-#### 13. Objetos e Métodos
+#### 14. Objetos e Métodos
 Já reparou que console também é um objeto e `log()` é um método dele?
 ```js
 console.log("Olá, mundo!"); // Exibe "Olá, mundo!" no console
 ```
 >Isso mostra como os objetos podem armazenar tanto propriedades quanto métodos, facilitando a reutilização e organização do código.
 
-#### 14. Criar um Objeto
+#### 15. Criar um Objeto
 Um objeto é criado utilizando as chaves `{}`
 
 ```js
@@ -353,7 +418,7 @@ var pessoa = {};
 
 console.log(typeof carro); // 'object'
 ```
-#### 15. Dot Notation Get
+#### 16. Dot Notation Get
 Acesse propriedades de um objeto utilizando o ponto `.`
 ```js
 var menu = {
@@ -365,7 +430,7 @@ var menu = {
 var bg = menu.backgroundColor; // '#8f4E'
 ```
 
-#### 16. Dot Notation Set
+#### 17. Dot Notation Set
 Substitua o valor de uma propriedade utilizando `.` e o `= `após o nome da mesma.
 ```js
 var menu = {
